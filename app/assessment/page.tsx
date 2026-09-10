@@ -115,9 +115,9 @@ export default function AssessmentPage() {
                 <span className="serif-i text-[var(--gold)]">profit potential.</span>
               </h1>
               <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-[var(--ink-2)]">
-                Twenty questions. Seven performance engines. Five minutes. Answer honestly —
-                the score only works if the answers are true. You'll see exactly where your
-                business stands, and where the profit is hiding.
+                Twenty questions. Five minutes. Answer honestly — the score only works if the
+                answers are true. You'll see exactly where your business stands operationally,
+                and which rung of the ladder is actually holding you back.
               </p>
               <div className="mt-12">
                 <button onClick={() => setStep(0)} className="btn-ink">

@@ -25,9 +25,9 @@ const fragment = Fragment_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RELY360 — Manufacturing Performance Architects",
+  title: "RELY360 — From Running a Factory to Owning an Enterprise",
   description:
-    "Every factory has hidden profit. We find it. One partner across manufacturing, quality, cost, people, strategy, growth, and technology. Measurable impact.",
+    "Five practices, one partner: operations excellence, brand & D2C transformation, franchise expansion, capital & M&A, and compliance. India's 360° business transformation firm for manufacturers and industrial businesses.",
 };
 
 export default function RootLayout({

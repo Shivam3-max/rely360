@@ -40,11 +40,21 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="grid gap-12 border-t hairline pt-12 md:grid-cols-4">
+        <div className="grid gap-12 border-t hairline pt-12 md:grid-cols-2 lg:grid-cols-5">
+          <div>
+            <p className="mono-label mb-5 opacity-50">Practices</p>
+            <ul className="space-y-3 text-sm opacity-80">
+              <li><Link href="/practices/operations" className="hover:text-[var(--gold-2)] transition-colors">01 · Operate</Link></li>
+              <li><Link href="/practices/brand-demand" className="hover:text-[var(--gold-2)] transition-colors">02 · Own — Brand & D2C</Link></li>
+              <li><Link href="/practices/franchise" className="hover:text-[var(--gold-2)] transition-colors">03 · Multiply — Franchise</Link></li>
+              <li><Link href="/practices/capital" className="hover:text-[var(--gold-2)] transition-colors">04 · Unlock — Capital & M&A</Link></li>
+              <li><Link href="/practices/governance" className="hover:text-[var(--gold-2)] transition-colors">05 · Govern — Compliance</Link></li>
+            </ul>
+          </div>
           <div>
             <p className="mono-label mb-5 opacity-50">Navigate</p>
             <ul className="space-y-3 text-sm opacity-80">
-              <li><Link href="/system" className="hover:text-[var(--gold-2)] transition-colors">The System</Link></li>
+              <li><Link href="/system" className="hover:text-[var(--gold-2)] transition-colors">How We Work</Link></li>
               <li><Link href="/engines" className="hover:text-[var(--gold-2)] transition-colors">Performance Engines</Link></li>
               <li><Link href="/industries" className="hover:text-[var(--gold-2)] transition-colors">Where We Transform</Link></li>
               <li><Link href="/architects" className="hover:text-[var(--gold-2)] transition-colors">The Architects</Link></li>

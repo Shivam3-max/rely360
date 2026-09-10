@@ -10,7 +10,7 @@ export default function EnginesPage() {
   return (
     <>
       <PageHero
-        kicker="Performance Engines"
+        kicker="Practice 01 · Operate — Performance Engines"
         title={
           <>
             Seven engines.
@@ -18,7 +18,7 @@ export default function EnginesPage() {
             <span className="serif-i text-[var(--gold)]">One destination.</span>
           </>
         }
-        sub="We don't sell services. We install engines — interconnected systems that each exist for exactly one reason: to improve profitability."
+        sub="Inside the Operations practice — the first rung of the ladder. We don't sell services. We install engines: interconnected systems that each exist for exactly one reason, to improve profitability."
       />
 
       <section>

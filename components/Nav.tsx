@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 import { motion, useScroll, useSpring, AnimatePresence } from "motion/react";
 
 const links = [
-  { href: "/system", label: "The System" },
-  { href: "/engines", label: "Performance Engines" },
+  { href: "/practices", label: "Practices" },
+  { href: "/system", label: "How We Work" },
   { href: "/industries", label: "Where We Transform" },
   { href: "/stories", label: "Stories" },
   { href: "/journal", label: "Journal" },

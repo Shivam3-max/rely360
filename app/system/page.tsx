@@ -12,15 +12,15 @@ export default function SystemPage() {
   return (
     <>
       <PageHero
-        kicker="The RELY360 System"
+        kicker="How We Work"
         title={
           <>
-            Manufacturing is not departments.
+            A business is not departments.
             <br />
             <span className="serif-i text-[var(--gold)]">It's one system.</span>
           </>
         }
-        sub="Purchase feeds production. Production feeds quality. Quality feeds people. People feed technology. Technology feeds sales. Sales feed profit. Break one — everything breaks."
+        sub="Purchase feeds production. Production feeds quality. Quality feeds people. Margin feeds capital. Capital feeds expansion. Break one — everything breaks. Whichever practice we're engaged for, this is the discipline underneath it."
       />
 
       {/* why rely360 exists */}
@@ -58,6 +58,24 @@ export default function SystemPage() {
                 <p className="serif-i mt-10 text-2xl md:text-3xl">
                   Instead — one integrated transformation partner.
                 </p>
+              </Reveal>
+              <Reveal delay={0.38}>
+                <p className="mt-6 max-w-md text-sm leading-relaxed text-[var(--ink-2)]">
+                  It gets worse further up. An operations consultant, a marketing agency, a
+                  franchise broker, an investment banker and a compliance firm — five vendors,
+                  five worldviews, and not one of them accountable for whether the business is
+                  actually worth more at the end of it.
+                </p>
+              </Reveal>
+              <Reveal delay={0.45}>
+                <div className="mt-8">
+                  <Link href="/practices" className="link-arrow">
+                    See the five practices
+                    <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+                      <path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" strokeWidth="1.2" />
+                    </svg>
+                  </Link>
+                </div>
               </Reveal>
             </div>
           </div>

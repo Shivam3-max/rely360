@@ -2,20 +2,19 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import Circle360 from "@/components/Circle360";
 import Cta from "@/components/Cta";
+import ValueLadder from "@/components/ValueLadder";
 import { Reveal, RevealLine, Stagger, StaggerItem } from "@/components/Reveal";
-import { engines, leaks, stories, wheel } from "@/lib/data";
+import { practices, udhariFacts } from "@/lib/practices";
+import { industries, stories } from "@/lib/data";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
-
-/* ────────────────────────────── hero dial ornament ────────────────────────────── */
 const r2 = (n: number) => Math.round(n * 100) / 100;
 
+/* ────────────────────────── hero dial ────────────────────────── */
 function HeroDial() {
   return (
     <div className="relative h-full w-full">
-      {/* rotating tick ring — whole svg rotates (compositor-friendly) */}
       <svg viewBox="0 0 400 400" className="dial-slow absolute inset-0 h-full w-full">
         {Array.from({ length: 90 }).map((_, i) => {
           const a = (i * 4 * Math.PI) / 180;
@@ -34,32 +33,27 @@ function HeroDial() {
           );
         })}
       </svg>
-      {/* rotating gold sweep */}
       <svg viewBox="0 0 400 400" className="dial-slower absolute inset-0 h-full w-full">
-        <path
-          d="M 200 70 A 130 130 0 0 1 320 155"
-          fill="none"
-          stroke="var(--gold)"
-          strokeWidth="2"
-        />
+        <path d="M 200 70 A 130 130 0 0 1 320 155" fill="none" stroke="var(--gold)" strokeWidth="2" />
         <circle cx="200" cy="70" r="3.5" fill="var(--gold)" />
       </svg>
-      {/* static layer */}
       <svg viewBox="0 0 400 400" className="absolute inset-0 h-full w-full">
         <circle cx="200" cy="200" r="150" fill="none" stroke="var(--line)" strokeWidth="1" />
         <circle cx="200" cy="200" r="108" fill="none" stroke="var(--line)" strokeWidth="0.7" strokeDasharray="2 7" />
-        <line x1="200" y1="182" x2="200" y2="218" stroke="var(--ink-3)" strokeWidth="0.7" />
-        <line x1="182" y1="200" x2="218" y2="200" stroke="var(--ink-3)" strokeWidth="0.7" />
+        {/* five ascending ticks — the ladder, echoed */}
+        {[0, 1, 2, 3, 4].map((i) => (
+          <line
+            key={i}
+            x1={170 + i * 15}
+            y1={230 - i * 14}
+            x2={170 + i * 15}
+            y2={244 - i * 14}
+            stroke="var(--gold)"
+            strokeWidth="1.6"
+            opacity={0.35 + i * 0.16}
+          />
+        ))}
         <circle cx="200" cy="200" r="30" fill="none" stroke="var(--ink)" strokeWidth="1" />
-        <text
-          x="200"
-          y="258"
-          textAnchor="middle"
-          fill="var(--ink-3)"
-          style={{ fontFamily: "var(--font-fragment)", fontSize: "9px", letterSpacing: "0.3em" }}
-        >
-          PERFORMANCE
-        </text>
         <text
           x="200"
           y="152"
@@ -69,12 +63,20 @@ function HeroDial() {
         >
           360°
         </text>
+        <text
+          x="200"
+          y="272"
+          textAnchor="middle"
+          fill="var(--ink-3)"
+          style={{ fontFamily: "var(--font-fragment)", fontSize: "9px", letterSpacing: "0.3em" }}
+        >
+          FIVE PRACTICES
+        </text>
       </svg>
     </div>
   );
 }
 
-/* ────────────────────────────── section label ────────────────────────────── */
 function SectionMark({ n, label }: { n: string; label: string }) {
   return (
     <Reveal className="mb-14 flex items-center gap-5">
@@ -85,134 +87,45 @@ function SectionMark({ n, label }: { n: string; label: string }) {
   );
 }
 
-/* ────────────────────────────── system constellation ────────────────────────────── */
-function SystemFlow() {
-  // node positions across a wide canvas — a system, not a line
-  const pts: [number, number][] = [
-    [60, 150],
-    [220, 70],
-    [390, 180],
-    [560, 60],
-    [730, 160],
-    [900, 80],
-    [1070, 150],
-  ];
-  const d = pts
-    .map((p, i) => (i === 0 ? `M ${p[0]} ${p[1]}` : `L ${p[0]} ${p[1]}`))
-    .join(" ");
-
-  return (
-    <div className="overflow-x-auto">
-      <svg viewBox="0 0 1130 240" className="min-w-[760px] w-full">
-        <motion.path
-          d={d}
-          fill="none"
-          stroke="var(--gold)"
-          strokeWidth="1.4"
-          initial={{ pathLength: 0 }}
-          whileInView={{ pathLength: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 2.4, ease: "easeInOut" }}
-        />
-        {pts.map((p, i) => (
-          <g key={i}>
-            <motion.circle
-              cx={p[0]}
-              cy={p[1]}
-              r="5"
-              fill="var(--paper)"
-              stroke="var(--ink)"
-              strokeWidth="1.4"
-              initial={{ scale: 0, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ delay: 0.3 * i + 0.2, duration: 0.5, ease: EASE }}
-              style={{ transformOrigin: `${p[0]}px ${p[1]}px` }}
-            />
-            <motion.text
-              x={p[0]}
-              y={p[1] + (p[1] > 120 ? 34 : -24)}
-              textAnchor="middle"
-              fill="var(--ink)"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ delay: 0.3 * i + 0.35, duration: 0.6 }}
-              style={{
-                fontFamily: "var(--font-fragment)",
-                fontSize: "12px",
-                letterSpacing: "0.16em",
-                textTransform: "uppercase",
-              }}
-            >
-              {wheel[i].label}
-            </motion.text>
-          </g>
-        ))}
-      </svg>
-    </div>
-  );
-}
-
-/* ────────────────────────────── before / after ────────────────────────────── */
-const transforms = [
-  { label: "Profitability", today: 28, after: 88 },
-  { label: "Visibility", today: 18, after: 92 },
-  { label: "Quality", today: 40, after: 90 },
-  { label: "Leadership", today: 32, after: 85 },
-  { label: "Technology", today: 22, after: 86 },
-  { label: "Growth", today: 30, after: 94 },
+/* ────────────────────────── the five traps ────────────────────────── */
+const traps = [
+  {
+    name: "The Leak",
+    line: "Profit escapes every single day — from machines, purchase, rework and rhythm.",
+    answer: "Operate",
+    slug: "operations",
+  },
+  {
+    name: "The Margin Trap",
+    line: "You manufacture at ten percent. Someone else's label sells it at sixty-five.",
+    answer: "Own",
+    slug: "brand-demand",
+  },
+  {
+    name: "The Ceiling",
+    line: "One outlet works beautifully. There is no system to make it fifty.",
+    answer: "Multiply",
+    slug: "franchise",
+  },
+  {
+    name: "The Lock",
+    line: "Twenty years of value, sitting inside an asset you cannot access or price.",
+    answer: "Unlock",
+    slug: "capital",
+  },
+  {
+    name: "The Exposure",
+    line: "The business outgrew its systems. Nobody has mapped what that now risks.",
+    answer: "Govern",
+    slug: "governance",
+  },
 ];
 
-function BeforeAfter() {
-  return (
-    <div className="space-y-9">
-      {transforms.map((t, i) => (
-        <div key={t.label}>
-          <div className="mb-3 flex items-baseline justify-between">
-            <span className="display-tight text-xl md:text-2xl">{t.label}</span>
-            <span className="mono-label text-[var(--gold)]">
-              ↑ transformed
-            </span>
-          </div>
-          <div className="relative h-[3px] w-full bg-[var(--line)]">
-            <motion.div
-              className="absolute left-0 top-0 h-full bg-[var(--ink-3)]"
-              initial={{ width: 0 }}
-              whileInView={{ width: `${t.today}%` }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.9, delay: i * 0.08, ease: EASE }}
-            />
-            <motion.div
-              className="absolute left-0 top-0 h-full bg-[var(--gold)]"
-              initial={{ width: 0 }}
-              whileInView={{ width: `${t.after}%` }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 1.4, delay: i * 0.08 + 0.5, ease: EASE }}
-            />
-            <motion.div
-              className="absolute top-1/2 h-[11px] w-[11px] -translate-y-1/2 rotate-45 border border-[var(--gold)] bg-[var(--paper)]"
-              initial={{ left: "0%", opacity: 0 }}
-              whileInView={{ left: `${t.after}%`, opacity: 1 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 1.4, delay: i * 0.08 + 0.5, ease: EASE }}
-            />
-          </div>
-          <div className="mt-2 flex justify-between">
-            <span className="mono-label !text-[0.6rem] text-[var(--ink-3)]">business today</span>
-            <span className="mono-label !text-[0.6rem] text-[var(--gold)]">after RELY360</span>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-/* ════════════════════════════════ PAGE ════════════════════════════════ */
+/* ════════════════════════════ PAGE ════════════════════════════ */
 export default function Home() {
   return (
     <>
-      {/* ── 01 · HERO ─────────────────────────────────────────── */}
+      {/* ── 01 · HERO ── */}
       <section className="relative flex min-h-screen items-center overflow-hidden">
         <div className="pointer-events-none absolute -right-[12%] top-1/2 hidden h-[720px] w-[720px] -translate-y-1/2 lg:block">
           <motion.div
@@ -232,42 +145,45 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
             className="mono-label mb-10 text-[var(--ink-2)]"
           >
-            RELY360 — Manufacturing Performance Architects
+            RELY360 — Manufacturing & Business Transformation
           </motion.p>
 
-          <h1 className="display max-w-5xl text-[13vw] leading-[0.95] sm:text-7xl md:text-8xl lg:text-[6.6rem]">
+          <h1 className="display max-w-4xl text-[11.5vw] leading-[0.95] sm:text-6xl md:text-7xl lg:text-[5.6rem]">
             <motion.span
               className="block"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.25, ease: EASE }}
             >
-              Every factory has
+              From running a factory
             </motion.span>
             <motion.span
               className="block"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.4, ease: EASE }}
+              transition={{ duration: 1, delay: 0.42, ease: EASE }}
             >
-              hidden <span className="serif-i text-[var(--gold)]">profit.</span>
+              to owning an{" "}
+              <span className="serif-i text-[var(--gold)]">enterprise.</span>
             </motion.span>
           </h1>
 
           <motion.p
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.1, ease: EASE }}
-            className="display-tight mt-8 text-3xl text-[var(--ink-2)] md:text-4xl"
+            transition={{ duration: 1, delay: 1.0, ease: EASE }}
+            className="mt-9 max-w-xl text-base leading-relaxed text-[var(--ink-2)] md:text-lg"
           >
-            We find it.
+            Operations. Brand and D2C. Franchise. Capital and exit. Governance.
+            Five practices under one partner — the whole climb from making a product
+            to owning something worth selling.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 1.45, ease: EASE }}
-            className="mt-14 flex flex-wrap items-center gap-5"
+            transition={{ duration: 0.9, delay: 1.35, ease: EASE }}
+            className="mt-12 flex flex-wrap items-center gap-5"
           >
             <Link href="/assessment" className="btn-ink">
               Begin the Assessment
@@ -275,16 +191,16 @@ export default function Home() {
                 <path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" strokeWidth="1.2" />
               </svg>
             </Link>
-            <Link href="/system" className="btn-ghost">
-              How the System Works
+            <Link href="/practices" className="btn-ghost">
+              The Five Practices
             </Link>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.9 }}
-            className="mt-24 flex items-center gap-4"
+            transition={{ duration: 1, delay: 1.8 }}
+            className="mt-20 flex items-center gap-4"
           >
             <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-[var(--gold)]" />
             <span className="mono-label text-[var(--ink-3)]">
@@ -294,133 +210,168 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 02 · THE REALITY ─────────────────────────────────────────── */}
+      {/* ── 02 · THE FIVE TRAPS ── */}
       <section className="border-t hairline bg-[var(--panel)]">
         <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-36">
           <SectionMark n="02" label="The Reality" />
           <Reveal>
             <h2 className="display-tight max-w-4xl text-4xl md:text-6xl">
-              Manufacturers don't fail because they lack orders.
+              Businesses don't stall for one reason.
               <br />
-              <span className="text-[var(--ink-3)]">They fail because profit leaks every day.</span>
+              <span className="text-[var(--ink-3)]">They get caught in five.</span>
             </h2>
           </Reveal>
 
           <Stagger className="mt-20" gap={0.09}>
-            {leaks.map((l, i) => (
-              <StaggerItem key={l}>
-                <div className="group flex items-baseline gap-6 border-b hairline py-6 transition-colors duration-500 hover:bg-[rgba(169,129,47,0.03)] md:gap-12 md:py-7">
-                  <span className="mono-num w-14 shrink-0 text-sm text-[var(--gold)] md:text-base">
+            {traps.map((t, i) => (
+              <StaggerItem key={t.name}>
+                <Link
+                  href={`/practices/${t.slug}`}
+                  className="group grid grid-cols-1 items-baseline gap-3 border-b hairline py-7 transition-colors duration-500 hover:bg-[rgba(169,129,47,0.03)] md:grid-cols-[4rem_18rem_1fr_auto] md:gap-8 md:py-8"
+                >
+                  <span className="mono-num text-sm text-[var(--gold)]">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="display-tight text-3xl transition-transform duration-500 group-hover:translate-x-3 md:text-5xl">
-                    {l}
+                  <span className="display-tight text-2xl transition-transform duration-500 group-hover:translate-x-2 md:text-4xl">
+                    {t.name}
                   </span>
-                  <span className="ml-auto hidden text-2xl text-[var(--ink-3)] transition-colors duration-500 group-hover:text-[var(--gold)] md:block">
-                    ↓
+                  <span className="text-sm leading-relaxed text-[var(--ink-2)] md:text-[0.95rem]">
+                    {t.line}
                   </span>
-                </div>
+                  <span className="mono-label whitespace-nowrap text-[var(--ink-3)] transition-colors duration-500 group-hover:text-[var(--gold)]">
+                    → {t.answer}
+                  </span>
+                </Link>
               </StaggerItem>
             ))}
           </Stagger>
 
           <Reveal delay={0.2} className="mt-16">
             <p className="serif-i text-2xl text-[var(--ink-2)] md:text-3xl">
-              None of these exist independently.
+              Most firms sell one escape. We built all five.
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* ── 03 · THE 360° WHEEL ─────────────────────────────────────────── */}
+      {/* ── 03 · THE VALUE LADDER ── */}
       <section className="border-t hairline">
         <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-36">
-          <SectionMark n="03" label="The 360° View" />
-          <div className="grid items-center gap-16 lg:grid-cols-[1fr_1.15fr]">
-            <div>
-              <Reveal>
-                <h2 className="display-tight text-4xl md:text-6xl">
-                  Nobody owns
-                  <br />
-                  the whole picture.
-                  <br />
-                  <span className="serif-i text-[var(--gold)]">We do.</span>
-                </h2>
-              </Reveal>
-              <Reveal delay={0.15}>
-                <p className="mt-8 max-w-md text-base leading-relaxed text-[var(--ink-2)]">
-                  Machine. People. Quality. Purchase. Inventory. Leadership. Sales.
-                  Technology. A factory leaks money from hundreds of places — not one.
-                  Move around the circle. Every function determines the same outcome.
-                </p>
-              </Reveal>
-              <Reveal delay={0.25}>
-                <p className="mono-label mt-10 text-[var(--ink-3)]">
-                  Hover the ring — explore the system
-                </p>
-              </Reveal>
-            </div>
-            <Reveal delay={0.2} y={40}>
-              <Circle360 />
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 04 · SYSTEM STATEMENT ─────────────────────────────────────────── */}
-      <section className="border-t hairline bg-[var(--panel)]">
-        <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-36">
-          <SectionMark n="04" label="The Philosophy" />
-          <Reveal>
-            <h2 className="display max-w-5xl text-4xl leading-[1.02] md:text-6xl lg:text-7xl">
-              Businesses aren't built{" "}
-              <span className="text-[var(--ink-3)]">department by department.</span>
-              <br />
-              They're built{" "}
-              <span className="serif-i text-[var(--gold)]">system by system.</span>
-            </h2>
-          </Reveal>
-          <div className="mt-24">
-            <SystemFlow />
-          </div>
-          <Reveal delay={0.2} className="mt-14">
-            <p className="mono-label text-[var(--ink-3)]">
-              Break one — everything breaks. Connect all seven — profit compounds.
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ── 05 · PERFORMANCE ENGINES ─────────────────────────────────────────── */}
-      <section className="border-t hairline">
-        <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-36">
-          <SectionMark n="05" label="Performance Engines" />
+          <SectionMark n="03" label="The Value Ladder" />
           <div className="mb-16 flex flex-wrap items-end justify-between gap-8">
             <Reveal>
-              <h2 className="display-tight text-4xl md:text-6xl">
-                Seven engines.
+              <h2 className="display-tight max-w-2xl text-4xl md:text-6xl">
+                Five rungs.
                 <br />
-                <span className="text-[var(--ink-3)]">One destination.</span>
+                <span className="serif-i text-[var(--gold)]">One climb.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
-              <p className="serif-i max-w-xs text-xl text-[var(--ink-2)]">
-                Every engine exists to improve profitability.
+              <p className="max-w-sm text-sm leading-relaxed text-[var(--ink-2)]">
+                Each rung stands on the one below it. A business that isn't profitable can't
+                be branded. A brand that isn't systematised can't be franchised. And nothing
+                unsystematised ever sells for what it's worth.
               </p>
+            </Reveal>
+          </div>
+          <ValueLadder />
+        </div>
+      </section>
+
+      {/* ── 04 · THE UDHARI TRAP ── */}
+      <section className="section-dark">
+        <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-36">
+          <Reveal className="mb-14 flex items-center gap-5">
+            <span className="mono-num text-sm text-[var(--gold-2)]">04</span>
+            <span className="h-px w-12 bg-[var(--gold-2)]" />
+            <span className="mono-label opacity-60">The Udhari Trap</span>
+          </Reveal>
+
+          <Reveal>
+            <h2 className="display max-w-4xl text-4xl leading-[1.03] md:text-6xl lg:text-7xl">
+              You make the product.
+              <br />
+              <span className="serif-i text-[var(--gold-2)]">
+                Someone else makes the margin.
+              </span>
+            </h2>
+          </Reveal>
+
+          <Reveal delay={0.15}>
+            <p className="mt-10 max-w-2xl text-base leading-[1.85] opacity-70 md:text-lg">
+              You manufacture at eight to twelve percent. The brand whose label goes on your
+              product sells it at sixty to seventy. Then you wait ninety days to be paid —
+              your working capital financing your customer's growth, at your interest cost.
+            </p>
+          </Reveal>
+          <Reveal delay={0.25}>
+            <p className="mt-6 max-w-2xl text-base leading-[1.85] opacity-70 md:text-lg">
+              The escape isn't a new factory. It's the same factory, the same product, and a
+              direct line to the customer — under a brand you own.
+            </p>
+          </Reveal>
+
+          <Stagger className="mt-16 grid gap-px bg-[var(--dark-line)] sm:grid-cols-2 lg:grid-cols-4" gap={0.08}>
+            {udhariFacts.map((f) => (
+              <StaggerItem key={f.label} className="bg-[var(--dark)]">
+                <div className="flex h-full min-h-[220px] flex-col justify-between p-8">
+                  <p className="display text-4xl text-[var(--gold-2)] md:text-5xl">{f.stat}</p>
+                  <div>
+                    <p className="mono-label mb-3">{f.label}</p>
+                    <p className="text-[0.76rem] leading-relaxed opacity-55">{f.note}</p>
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </Stagger>
+
+          <Reveal delay={0.2}>
+            <div className="mt-14">
+              <Link href="/practices/brand-demand" className="btn-paper">
+                Run your numbers on the Margin Ladder
+                <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+                  <path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" strokeWidth="1.2" />
+                </svg>
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── 05 · PRACTICES ── */}
+      <section className="border-t hairline bg-[var(--panel)]">
+        <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-36">
+          <SectionMark n="05" label="The Practices" />
+          <div className="mb-16 flex flex-wrap items-end justify-between gap-8">
+            <Reveal>
+              <h2 className="display-tight text-4xl md:text-6xl">
+                Five practices.
+                <br />
+                <span className="text-[var(--ink-3)]">One accountable partner.</span>
+              </h2>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <Link href="/practices" className="link-arrow">
+                All Practices
+                <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+                  <path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" strokeWidth="1.2" />
+                </svg>
+              </Link>
             </Reveal>
           </div>
 
           <Stagger gap={0.06}>
-            {engines.map((e) => (
-              <StaggerItem key={e.slug}>
+            {practices.map((p) => (
+              <StaggerItem key={p.slug}>
                 <Link
-                  href={`/engines/${e.slug}`}
-                  className="engine-card group grid grid-cols-[3rem_1fr_auto] items-center gap-4 py-7 md:grid-cols-[5rem_1fr_1fr_auto] md:gap-8 md:py-8"
+                  href={`/practices/${p.slug}`}
+                  className="engine-card group grid grid-cols-[3rem_1fr] items-center gap-4 py-7 md:grid-cols-[5rem_11rem_1fr_auto] md:gap-8 md:py-8"
                 >
-                  <span className="mono-num text-sm text-[var(--gold)]">{e.index}</span>
-                  <span className="display-tight text-2xl md:text-3xl">{e.name}</span>
-                  <span className="col-span-3 col-start-2 text-sm leading-relaxed text-[var(--ink-2)] md:col-span-1 md:col-start-3">
-                    {e.short}
+                  <span className="mono-num text-sm text-[var(--gold)]">{p.index}</span>
+                  <span className="display-tight text-2xl md:text-3xl">{p.verb}</span>
+                  <span className="col-span-2 col-start-1 text-sm leading-relaxed text-[var(--ink-2)] md:col-span-1 md:col-start-3">
+                    <span className="mono-label mr-3 text-[var(--ink-3)]">{p.name}</span>
+                    {p.short}
                   </span>
                   <svg
                     width="20"
@@ -439,34 +390,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 06 · TRANSFORMATION ─────────────────────────────────────────── */}
-      <section className="border-t hairline bg-[var(--panel)]">
+      {/* ── 06 · INDUSTRIES ── */}
+      <section className="border-t hairline">
         <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-36">
-          <SectionMark n="06" label="The Shift" />
-          <div className="grid gap-16 lg:grid-cols-[1fr_1.3fr] lg:gap-24">
-            <div>
-              <Reveal>
-                <h2 className="display-tight text-4xl md:text-6xl">
-                  Business today.
-                  <br />
-                  <span className="serif-i text-[var(--gold)]">Business after RELY360.</span>
-                </h2>
-              </Reveal>
-              <Reveal delay={0.15}>
-                <p className="mt-8 max-w-md text-base leading-relaxed text-[var(--ink-2)]">
-                  Machine efficiency up. Scrap down. Purchase cost down. First pass
-                  yield up. Employee skills up. Brand value up. Sales up. Profit up.
-                  Everything connected. Everything measurable.
-                </p>
-              </Reveal>
-              <RevealLine className="mt-12 h-px w-full max-w-md bg-[var(--gold)]" delay={0.3} />
-            </div>
-            <BeforeAfter />
+          <SectionMark n="06" label="Where We Transform" />
+          <div className="mb-14 flex flex-wrap items-end justify-between gap-8">
+            <Reveal>
+              <h2 className="display-tight text-4xl md:text-6xl">
+                If it manufactures,
+                <br />
+                <span className="serif-i text-[var(--gold)]">we can transform it.</span>
+              </h2>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <Link href="/industries" className="link-arrow">
+                All Industries
+                <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+                  <path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" strokeWidth="1.2" />
+                </svg>
+              </Link>
+            </Reveal>
           </div>
+          <Stagger className="flex flex-wrap gap-2.5" gap={0.03}>
+            {industries.map((i) => (
+              <StaggerItem key={i.slug}>
+                <Link
+                  href={`/industries/${i.slug}`}
+                  className="inline-block border hairline bg-[var(--panel)] px-5 py-3 text-sm text-[var(--ink-2)] transition-colors duration-300 hover:border-[var(--gold)] hover:text-[var(--ink)]"
+                >
+                  {i.name}
+                </Link>
+              </StaggerItem>
+            ))}
+          </Stagger>
+          <RevealLine className="mt-14 h-px w-full bg-[var(--gold)]" delay={0.2} />
         </div>
       </section>
 
-      {/* ── 07 · THE ARCHITECTS ─────────────────────────────────────────── */}
+      {/* ── 07 · ARCHITECTS ── */}
       <section className="section-dark">
         <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-36">
           <Reveal className="mb-14 flex items-center gap-5">
@@ -496,9 +457,9 @@ export default function Home() {
           <Stagger className="grid gap-px bg-[var(--dark-line)] sm:grid-cols-2 lg:grid-cols-4" gap={0.1}>
             {[
               { name: "Sandeep Sood", role: "Manufacturing Excellence", facts: ["20+ Years", "Plant Leadership"] },
-              { name: "Mohit Sapra", role: "Quality Systems", facts: ["Operational Excellence", "Plant Leadership"] },
+              { name: "Mohit Sapra", role: "Quality & Operations", facts: ["Operational Excellence", "Plant Leadership"] },
               { name: "Arun Sharma", role: "Business Transformation", facts: ["Leadership", "Execution Systems"] },
-              { name: "Shivam Bhandari", role: "Growth & Digital", facts: ["Technology", "Market Expansion"] },
+              { name: "Shivam Bhandari", role: "Growth, Brand & Digital", facts: ["D2C & Marketing", "Market Expansion"] },
             ].map((a, i) => (
               <StaggerItem key={a.name} className="bg-[var(--dark)]">
                 <div className="group flex h-full flex-col justify-between p-8 transition-colors duration-500 hover:bg-[var(--dark-2)]">
@@ -518,9 +479,7 @@ export default function Home() {
                     <p className="mono-label mt-2 text-[var(--gold-2)]">{a.role}</p>
                     <div className="mt-5 space-y-1.5">
                       {a.facts.map((f) => (
-                        <p key={f} className="text-xs opacity-55">
-                          {f}
-                        </p>
+                        <p key={f} className="text-xs opacity-55">{f}</p>
                       ))}
                     </div>
                   </div>
@@ -531,7 +490,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 08 · TRANSFORMATION STORIES ─────────────────────────────────────────── */}
+      {/* ── 08 · STORIES ── */}
       <section>
         <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-36">
           <SectionMark n="08" label="Transformation Stories" />
@@ -553,17 +512,20 @@ export default function Home() {
             </Reveal>
           </div>
 
-          <div className="grid gap-px bg-[var(--line)] md:grid-cols-2">
-            {stories.slice(0, 2).map((s, i) => (
-              <Reveal key={s.slug} delay={i * 0.12} className="bg-[var(--paper)]">
-                <Link href={`/stories#${s.slug}`} className="group block h-full p-9 transition-colors duration-500 hover:bg-[var(--panel)] md:p-12">
+          <div className="grid gap-px bg-[var(--line)] md:grid-cols-3">
+            {stories.slice(0, 3).map((s, i) => (
+              <Reveal key={s.slug} delay={i * 0.1} className="bg-[var(--paper)]">
+                <Link
+                  href={`/stories#${s.slug}`}
+                  className="group block h-full p-8 transition-colors duration-500 hover:bg-[var(--panel)] lg:p-10"
+                >
                   <p className="mono-label mb-6 text-[var(--gold)]">{s.sector}</p>
-                  <h3 className="display-tight mb-8 text-2xl md:text-3xl">{s.title}</h3>
-                  <div className="grid grid-cols-2 gap-6 border-t hairline pt-8">
+                  <h3 className="display-tight mb-8 text-xl md:text-2xl">{s.title}</h3>
+                  <div className="grid grid-cols-2 gap-5 border-t hairline pt-7">
                     {s.results.slice(0, 2).map((r) => (
                       <div key={r.label}>
-                        <p className="mono-num text-xl text-[var(--ink)] md:text-2xl">{r.value}</p>
-                        <p className="mono-label mt-1.5 !text-[0.6rem] text-[var(--ink-3)]">
+                        <p className="mono-num text-lg text-[var(--ink)]">{r.value}</p>
+                        <p className="mono-label mt-1.5 !text-[0.55rem] text-[var(--ink-3)]">
                           {r.direction === "up" ? "↑" : "↓"} {r.label}
                         </p>
                       </div>
@@ -576,7 +538,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 09 · CTA ─────────────────────────────────────────── */}
+      {/* ── 09 · CTA ── */}
       <Cta />
     </>
   );

@@ -560,6 +560,74 @@ export const stories: Story[] = [
       { label: "Sales cycle", value: "−35%", direction: "down" },
     ],
   },
+  {
+    slug: "pharma-d2c-escape",
+    sector: "Pharmaceutical · North India · Own — Brand & D2C",
+    title: "Twenty years of manufacturing. Zero customers who knew their name.",
+    problem:
+      "A nutraceutical contract manufacturer produced for eleven brands at 9% margin, on 90-day credit. Two customers were 61% of revenue, and one had begun quietly qualifying a cheaper supplier. The promoter's entire net worth sat inside a business with no brand, no consumer, and no leverage.",
+    investigation:
+      "Category screening across their catalogue found three SKUs with genuine D2C economics: high repeat rate, strong margin headroom at consumer price, and shelf life that tolerated ecommerce. Everything else was correctly ruled out. The margin ladder was stark — a product leaving their gate at ₹58 retailed at ₹399 under a customer's label.",
+    solution:
+      "One brand, three SKUs. AYUSH and FSSAI registrations run as a parallel workstream, packaging and identity built from scratch, own store plus marketplaces sequenced deliberately, and a creative engine tuned to a CAC ceiling set before launch. Contribution margin per order reviewed every month — SKUs that missed it were killed, not defended.",
+    results: [
+      { label: "Contribution margin", value: "9% → 47%", direction: "up" },
+      { label: "Receivable days on D2C revenue", value: "90 → 6", direction: "down" },
+      { label: "Revenue from owned brand", value: "0 → 18%", direction: "up" },
+      { label: "Top-2 customer dependence", value: "61% → 44%", direction: "down" },
+    ],
+  },
+  {
+    slug: "food-franchise-network",
+    sector: "Food & Beverage · West India · Multiply — Franchise",
+    title: "Four outlets that worked. Eleven franchisees who didn't.",
+    problem:
+      "A regional QSR brand had sold fifteen franchises in two years on the strength of four company outlets. Eleven were losing money, three had shut, and franchisee word-of-mouth had made new territory sales nearly impossible. The founder blamed the franchisees.",
+    investigation:
+      "The unit economics never survived transplantation. Company outlets carried rent negotiated years earlier and were run by the founder's own trained staff. Franchise outlets faced double the rent, no training curriculum, and a menu whose kitchen throughput collapsed at peak hours. The model was FOFO in markets that needed FOCO discipline.",
+    solution:
+      "Expansion frozen for seven months. Unit economics rebuilt honestly against real rent, kitchen redesigned for throughput, full operations manual and eleven-day training curriculum written, royalty restructured so franchisees reached payback inside 26 months. Two struggling markets converted to FOCO. Then — and only then — territory sales restarted with a qualification process that rejects more applicants than it accepts.",
+    results: [
+      { label: "Franchisee outlets profitable", value: "27% → 86%", direction: "up" },
+      { label: "Average payback period", value: "41 → 24 months", direction: "down" },
+      { label: "Network outlets", value: "15 → 38", direction: "up" },
+      { label: "Franchisee churn", value: "−79%", direction: "down" },
+    ],
+  },
+  {
+    slug: "auto-component-exit",
+    sector: "Auto Components · Pune · Unlock — Capital & Exit",
+    title: "A business worth ₹90 crore that no buyer could actually buy",
+    problem:
+      "A promoter in his sixties wanted to exit within two years. An informal offer had arrived at roughly 4× EBITDA and he suspected it was low — but had no way to know, and no second party to compare it against.",
+    investigation:
+      "Sale-readiness diagnosis found exactly why the offer was low. Three years of financials that didn't reconcile to GST filings, 58% revenue in one OEM, related-party rent with no agreement, no MIS, and a business where the promoter personally approved every price. A buyer wasn't discounting the assets — they were discounting the risk of everything walking out with him.",
+    solution:
+      "An eighteen-month readiness programme before any buyer was approached: financials cleaned and audited consistently, a second-line management team built and given real authority, customer concentration reduced through deliberate account development, related-party arrangements formalised, and monthly MIS instituted. Then a proper process — information memorandum, data room, and nine counterparties approached in parallel rather than one.",
+    results: [
+      { label: "Closing multiple", value: "4.0× → 6.8× EBITDA", direction: "up" },
+      { label: "Competing bidders", value: "1 → 5", direction: "up" },
+      { label: "Customer concentration", value: "58% → 34%", direction: "down" },
+      { label: "Promoter earn-out risk", value: "−60%", direction: "down" },
+    ],
+  },
+  {
+    slug: "electrical-compliance-rescue",
+    sector: "Electrical Appliances · NCR · Govern — Compliance & Risk",
+    title: "The diligence that stopped in week three",
+    problem:
+      "A growth investor had signed a term sheet at a valuation the promoter was delighted with. Diligence uncovered lapsed BIS certification on two running SKUs, a BOM that had drifted from the certified specification, and labour registers reconstructed the week before. The investor walked.",
+    investigation:
+      "Nothing found in diligence was new — it had accumulated over six years of growth outpacing systems. There was no compliance register, no renewal calendar, no owner. Certification was treated as a launch-day event rather than a live obligation, and engineering changed BOMs without anyone connecting that to the certificate.",
+    solution:
+      "A complete compliance map across factory, labour, environmental, product and corporate obligations — 94 items, each with status, owner and renewal date. Gaps closed in risk order. BOM change control formally linked to certification. Registers rebuilt and maintained live. A quarterly internal audit installed so the answer to 'can we survive an inspection tomorrow' became permanently yes.",
+    results: [
+      { label: "Compliance items current", value: "61% → 100%", direction: "up" },
+      { label: "Diligence re-opened & closed", value: "9 months", direction: "up" },
+      { label: "Valuation achieved vs original", value: "+12%", direction: "up" },
+      { label: "Open audit findings", value: "−94%", direction: "down" },
+    ],
+  },
 ];
 
 // ─────────────────────────────────────────────────────────────
@@ -658,6 +726,69 @@ export const journal: JournalEntry[] = [
       "A demand system asks mechanical questions. How many qualified enquiries does the business need per month to hit the number? Where will they come from — search, LinkedIn, dealers, exhibitions, referrals? What happens to an enquiry in the first hour, day, week? Who reviews the funnel, and what do they change when a stage underperforms?",
       "B2B industrial buyers changed faster than industrial sellers did. A plant head shortlists vendors from a phone screen at 11 PM before any salesperson knows the requirement exists. If your expertise isn't visible there, you're not losing deals — you're never entering them.",
       "The compounding is real. Month one, a technical article. Month six, page-one rankings for the searches that matter. Month twelve, inbound enquiries from companies you couldn't get meetings with. Systems are slower than heroics — and then, suddenly, much faster.",
+    ],
+  },
+  {
+    slug: "the-udhari-trap",
+    topic: "Brand & D2C",
+    title: "The udhari trap",
+    dek: "Ninety-day credit isn't a payment term. It's an interest-free loan you make to your customer, funded by a loan you pay interest on.",
+    read: "7 min",
+    date: "2026-08-22",
+    body: [
+      "Every manufacturer in India understands udhari intuitively and almost nobody has ever put a number on it. So here is the number. A business doing ₹40 crore a year on 90-day terms has roughly ₹10 crore permanently parked inside its customers' businesses. Not late. Not disputed. Just structurally, by agreement, somewhere else.",
+      "You financed that ₹10 crore. You may be paying eleven percent on a working capital line to do it. So the arithmetic is that you borrow money, at interest, to fund your customer's operations, and then thank them for the order.",
+      "It gets worse when you look at what your customer does with the product. A contract manufacturer typically earns eight to twelve percent. The brand whose label goes on that product sells it at sixty to seventy. You carried the plant, the labour, the compliance, the quality liability, and the working capital — and you took the thinnest slice of the value chain you personally created.",
+      "The usual response is to negotiate better terms. That rarely works, because terms are a function of power, and a commodity supplier has none. Chasing payment harder doesn't change the structure. Neither does adding another customer on the same terms.",
+      "The structural answer is to sell something, to someone, who pays you at the time of purchase. That is what a direct-to-consumer brand actually is — not a marketing project, but a working capital transformation that happens to come with sixty percent margins attached. Same factory. Same product. Different buyer, different terms, different economics.",
+      "It is not right for every product. Low average order value, thin repeat rates, brutal shipping economics, and heavy regulatory load can each kill it — and the honest first step is testing your catalogue against those constraints rather than launching on enthusiasm. But for most manufacturers there is at least one SKU sitting in the plant right now that would be worth five times more with your name on it.",
+    ],
+  },
+  {
+    slug: "franchise-before-you-are-ready",
+    topic: "Franchise",
+    title: "Most brands franchise two years too early",
+    dek: "The first ten franchisees decide whether the next hundred are possible. Almost everyone sells them before the model is ready.",
+    read: "6 min",
+    date: "2026-08-05",
+    body: [
+      "Franchising is genuinely the most capital-efficient expansion route available to an Indian brand. Someone else funds the outlet, someone else runs it with an owner's attention, and you grow without raising equity or debt. Which is exactly why it is so often attempted before the business can support it.",
+      "The failure pattern is consistent. A founder has two or three outlets that work well. They are in the founder's own city, on rent negotiated years ago, staffed by people the founder trained personally, and supervised by the founder walking in unannounced. On the strength of that, territories get sold.",
+      "The franchisee then discovers what the model actually costs in a market where rent is double, no trained staff exist, and nobody walks in unannounced. There is no operations manual because the founder never needed one. Throughput collapses at peak because the process was never designed, only absorbed. Payback drifts past thirty-six months, which in a volatile market is another way of saying never.",
+      "Then the second-order damage begins. Struggling franchisees talk to prospective franchisees. Territory sales dry up. The brand acquires a reputation among investors that takes years to shake — and the founder concludes, incorrectly, that they picked bad partners.",
+      "The readiness test is unglamorous and answerable. Is the unit profitable without the founder standing in it? Can a competent stranger run it from written material? Does the payback maths survive realistic rent in a market you don't already own? Is the brand a reason a customer chooses you, or just a sign above a door?",
+      "Answer those honestly and the sequencing becomes obvious: fix the unit, write the system, model the economics, then sell territories. Brands that do it in that order are the ones still expanding at outlet fifty.",
+    ],
+  },
+  {
+    slug: "why-most-smes-are-unsellable",
+    topic: "Capital & Exit",
+    title: "Why most SMEs are unsellable",
+    dek: "The gap between what a business earns and what it fetches is almost never about the numbers. It is about who the numbers depend on.",
+    read: "6 min",
+    date: "2026-07-14",
+    body: [
+      "A promoter spends thirty years building a business, decides it is time to exit, and discovers something unpleasant: the offers are far below what the earnings would suggest, or there are no offers at all. The instinct is to blame the buyers. The reality is usually that the business, in its current state, cannot be bought.",
+      "A buyer is not purchasing last year's EBITDA. They are purchasing the probability that it continues after the person who created it leaves. Every dependency on that person is a discount. Every undocumented process, every price approved personally, every relationship that exists in one man's phone — priced in, downward.",
+      "The recurring findings are almost boringly consistent. Financials that don't reconcile to filings. Revenue concentrated in two accounts. Related-party rent with no agreement. No MIS. Informal employment arrangements. Processes that live in memory. Each is survivable in operation and expensive in diligence.",
+      "The second problem is process. Most SME transactions happen because one interested party approached the promoter. With a single counterparty there is no competitive tension, no benchmark, and no leverage — and price in a transaction is set by competition, not by argument.",
+      "The encouraging part is that all of this is fixable, and the fixing is worth more per hour than almost anything else a promoter can do at that stage. Eighteen months of deliberate preparation — clean books, a real second line, reduced concentration, formalised arrangements, documented systems — routinely moves the closing multiple by more than the entire cost of the exercise.",
+      "The best time to make a business sellable is several years before you intend to sell it. The second best time is before you talk to the first buyer, not after.",
+    ],
+  },
+  {
+    slug: "governance-is-not-paperwork",
+    topic: "Governance",
+    title: "Governance is not paperwork",
+    dek: "Compliance built for audit week delivers nothing. Compliance built into the operating rhythm quietly raises the value of the whole company.",
+    read: "5 min",
+    date: "2026-06-28",
+    body: [
+      "Ask most promoters about compliance and you get a slight grimace and a reference to their CA. It is understood as cost, as friction, as the thing that must be tidied before someone comes to look. Which is exactly why it fails at the only moments it matters.",
+      "The Indian compliance load is genuinely heavy — factory, labour, environmental, product, tax and corporate obligations spread across departments that rarely talk to each other. Almost no mid-size business has a single register of what actually applies to it at its current size. Without that register there is no calendar, and without a calendar there is no owner, and things lapse quietly until an inspector, a customer auditor, or an investor's diligence team finds them.",
+      "We have watched a signed term sheet evaporate over lapsed product certification and a bill of materials that had drifted from the certified specification. Nothing discovered was new. It had simply accumulated over years of growth outpacing systems, with no mechanism designed to catch it.",
+      "The deeper issue is that the same weakness which creates compliance exposure also caps growth. A business with no defined structure, no authority matrix and no MIS cannot delegate. Every decision routes to the owner. Growth is therefore capped at exactly the limit of one person's attention — and that ceiling is invisible until you hit it.",
+      "Governance done properly is not filing. It is the conversion of a promoter's business into an institution: something that can be audited, financed, franchised, inherited or sold without depending on any individual's memory. That is not overhead. On the day someone puts a valuation on your company, it is most of the argument.",
     ],
   },
 ];
