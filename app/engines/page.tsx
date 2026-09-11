@@ -10,15 +10,15 @@ export default function EnginesPage() {
   return (
     <>
       <PageHero
-        kicker="Practice 01 · Operate — Performance Engines"
+        kicker="Service 01 · Cut Costs — The Seven Engines"
         title={
           <>
-            Seven engines.
+            Seven ways we improve
             <br />
-            <span className="serif-i text-[var(--gold)]">One destination.</span>
+            <span className="serif-i text-[var(--gold)]">your factory.</span>
           </>
         }
-        sub="Inside the Operations practice — the first rung of the ladder. We don't sell services. We install engines: interconnected systems that each exist for exactly one reason, to improve profitability."
+        sub="This is what is inside our first service. Seven areas of your factory we work on — each one for the same reason: to increase your profit."
       />
 
       <section>

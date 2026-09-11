@@ -42,34 +42,34 @@ export default function Footer() {
 
         <div className="grid gap-12 border-t hairline pt-12 md:grid-cols-2 lg:grid-cols-5">
           <div>
-            <p className="mono-label mb-5 opacity-50">Practices</p>
+            <p className="mono-label mb-5 opacity-50">Our Services</p>
             <ul className="space-y-3 text-sm opacity-80">
-              <li><Link href="/practices/operations" className="hover:text-[var(--gold-2)] transition-colors">01 · Operate</Link></li>
-              <li><Link href="/practices/brand-demand" className="hover:text-[var(--gold-2)] transition-colors">02 · Own — Brand & D2C</Link></li>
-              <li><Link href="/practices/franchise" className="hover:text-[var(--gold-2)] transition-colors">03 · Multiply — Franchise</Link></li>
-              <li><Link href="/practices/capital" className="hover:text-[var(--gold-2)] transition-colors">04 · Unlock — Capital & M&A</Link></li>
-              <li><Link href="/practices/governance" className="hover:text-[var(--gold-2)] transition-colors">05 · Govern — Compliance</Link></li>
+              <li><Link href="/practices/operations" className="hover:text-[var(--gold-2)] transition-colors">01 · Cut Costs</Link></li>
+              <li><Link href="/practices/brand-demand" className="hover:text-[var(--gold-2)] transition-colors">02 · Sell Direct — D2C Brand</Link></li>
+              <li><Link href="/practices/franchise" className="hover:text-[var(--gold-2)] transition-colors">03 · Franchise Expansion</Link></li>
+              <li><Link href="/practices/capital" className="hover:text-[var(--gold-2)] transition-colors">04 · Funding, M&A & Sale</Link></li>
+              <li><Link href="/practices/governance" className="hover:text-[var(--gold-2)] transition-colors">05 · Compliance & Systems</Link></li>
             </ul>
           </div>
           <div>
             <p className="mono-label mb-5 opacity-50">Navigate</p>
             <ul className="space-y-3 text-sm opacity-80">
               <li><Link href="/system" className="hover:text-[var(--gold-2)] transition-colors">How We Work</Link></li>
-              <li><Link href="/engines" className="hover:text-[var(--gold-2)] transition-colors">Performance Engines</Link></li>
-              <li><Link href="/industries" className="hover:text-[var(--gold-2)] transition-colors">Where We Transform</Link></li>
-              <li><Link href="/architects" className="hover:text-[var(--gold-2)] transition-colors">The Architects</Link></li>
+              <li><Link href="/engines" className="hover:text-[var(--gold-2)] transition-colors">The Seven Engines</Link></li>
+              <li><Link href="/industries" className="hover:text-[var(--gold-2)] transition-colors">Industries</Link></li>
+              <li><Link href="/architects" className="hover:text-[var(--gold-2)] transition-colors">Our Team</Link></li>
             </ul>
           </div>
           <div>
-            <p className="mono-label mb-5 opacity-50">Evidence</p>
+            <p className="mono-label mb-5 opacity-50">Proof</p>
             <ul className="space-y-3 text-sm opacity-80">
-              <li><Link href="/stories" className="hover:text-[var(--gold-2)] transition-colors">Transformation Stories</Link></li>
-              <li><Link href="/journal" className="hover:text-[var(--gold-2)] transition-colors">Performance Journal</Link></li>
-              <li><Link href="/assessment" className="hover:text-[var(--gold-2)] transition-colors">Performance Assessment</Link></li>
+              <li><Link href="/stories" className="hover:text-[var(--gold-2)] transition-colors">Client Results</Link></li>
+              <li><Link href="/journal" className="hover:text-[var(--gold-2)] transition-colors">Articles</Link></li>
+              <li><Link href="/assessment" className="hover:text-[var(--gold-2)] transition-colors">Free Business Check</Link></li>
             </ul>
           </div>
           <div>
-            <p className="mono-label mb-5 opacity-50">Start the Conversation</p>
+            <p className="mono-label mb-5 opacity-50">Contact Us</p>
             <ul className="space-y-3 text-sm opacity-80">
               <li>
                 <Link href="/contact" className="hover:text-[var(--gold-2)] transition-colors">
@@ -96,14 +96,14 @@ export default function Footer() {
           </div>
           <div className="md:text-right">
             <Link href="/assessment" className="btn-paper">
-              Begin the Assessment
+              Free Business Check
             </Link>
           </div>
         </div>
 
         <div className="mt-16 flex flex-col justify-between gap-4 border-t hairline pt-8 md:flex-row">
           <p className="mono-label opacity-40">
-            © {new Date().getFullYear()} RELY360 — Manufacturing Performance Architects
+            © {new Date().getFullYear()} RELY360 — Manufacturing & Business Consultants
           </p>
           <p className="mono-label opacity-40">Transforming Manufacturing. Delivering Results.</p>
         </div>

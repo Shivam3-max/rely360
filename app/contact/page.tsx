@@ -75,15 +75,15 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        kicker="Start the Conversation"
+        kicker="Contact Us"
         title={
           <>
-            Talk to an architect.
+            Talk to an expert.
             <br />
             <span className="serif-i text-[var(--gold)]">Not a salesperson.</span>
           </>
         }
-        sub="Tell us where your business stands. A RELY360 partner — not a junior associate — reviews every enquiry and responds within one working day."
+        sub="Tell us where your business stands today. A RELY360 partner — not a junior employee — reads every enquiry and replies within one working day."
       />
 
       <section className="bg-[var(--panel)]">
@@ -136,8 +136,8 @@ export default function ContactPage() {
                   <p className="mono-label mb-4 text-[var(--gold)]">What happens next</p>
                   <ol className="space-y-3 text-sm leading-relaxed text-[var(--ink-2)]">
                     <li className="gold-tick">A partner reviews your details — within one working day.</li>
-                    <li className="gold-tick">A 30-minute conversation about where profit is leaking.</li>
-                    <li className="gold-tick">If it makes sense: a structured performance assessment.</li>
+                    <li className="gold-tick">A 30-minute call about where you are losing money.</li>
+                    <li className="gold-tick">If it makes sense, we do a full check of your business.</li>
                   </ol>
                   <p className="mt-5 text-xs text-[var(--ink-3)]">
                     No obligation. No junior handoffs. No spam.

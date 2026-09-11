@@ -136,7 +136,7 @@ export default function ValueLadder() {
               transition={{ duration: 0.3 }}
               className="serif-i text-xl text-[var(--ink-3)] md:text-2xl"
             >
-              Five rungs. One firm. Most businesses are stuck on the first.
+              Five services. Most businesses never get past the first one.
             </motion.p>
           )}
         </AnimatePresence>

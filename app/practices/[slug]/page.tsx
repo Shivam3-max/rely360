@@ -27,7 +27,7 @@ export default async function PracticePage({
   return (
     <>
       <PageHero
-        kicker={`Practice ${p.index} — ${p.verb}`}
+        kicker={`Service ${p.index} — ${p.verb}`}
         title={
           <>
             {p.headline[0]}
@@ -43,7 +43,7 @@ export default async function PracticePage({
         <div className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10 lg:py-28">
           <div className="grid gap-12 lg:grid-cols-[240px_1fr] lg:gap-20">
             <Reveal>
-              <p className="mono-label text-[var(--gold)]">The Argument</p>
+              <p className="mono-label text-[var(--gold)]">Why This Matters</p>
             </Reveal>
             <div className="max-w-3xl">
               {p.thesis.map((t, i) => (
@@ -69,11 +69,11 @@ export default async function PracticePage({
         <section className="section-dark">
           <div className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10 lg:py-28">
             <Reveal className="mb-14">
-              <p className="mono-label mb-6 text-[var(--gold-2)]">The Udhari Trap</p>
+              <p className="mono-label mb-6 text-[var(--gold-2)]">The Udhari Problem</p>
               <h2 className="display-tight max-w-3xl text-3xl md:text-5xl">
-                Four numbers every contract manufacturer
+                Four numbers every factory owner
                 <br />
-                <span className="serif-i text-[var(--gold-2)]">already knows, and rarely says.</span>
+                <span className="serif-i text-[var(--gold-2)]">already knows, but nobody says out loud.</span>
               </h2>
             </Reveal>
             <Stagger className="grid gap-px bg-[var(--dark-line)] sm:grid-cols-2 lg:grid-cols-4" gap={0.08}>
@@ -97,9 +97,9 @@ export default async function PracticePage({
       <section className="border-t hairline">
         <div className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10 lg:py-28">
           <Reveal className="mb-14">
-            <p className="mono-label mb-6 text-[var(--gold)]">What We Find</p>
+            <p className="mono-label mb-6 text-[var(--gold)]">Common Problems</p>
             <h2 className="display-tight max-w-2xl text-3xl md:text-5xl">
-              The pattern, almost every time.
+              What we see in most businesses.
             </h2>
           </Reveal>
           <Stagger className="grid gap-px bg-[var(--line)] md:grid-cols-2" gap={0.07}>
@@ -123,12 +123,12 @@ export default async function PracticePage({
         <section className="border-t hairline bg-[var(--panel)]">
           <div className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10 lg:py-28">
             <Reveal className="mb-14">
-              <p className="mono-label mb-6 text-[var(--gold)]">The Margin Ladder</p>
+              <p className="mono-label mb-6 text-[var(--gold)]">Check Your Own Numbers</p>
               <h2 className="display-tight max-w-3xl text-3xl md:text-5xl">
-                Put your own numbers in.
+                Put your own figures in.
                 <br />
                 <span className="text-[var(--ink-3)]">
-                  The arithmetic is uncomfortable for everyone the first time.
+                  The maths surprises everyone the first time.
                 </span>
               </h2>
             </Reveal>
@@ -172,11 +172,11 @@ export default async function PracticePage({
       <section className="border-t hairline bg-[var(--panel)]">
         <div className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10 lg:py-28">
           <Reveal className="mb-14">
-            <p className="mono-label mb-6 text-[var(--gold)]">How We Work</p>
+            <p className="mono-label mb-6 text-[var(--gold)]">How We Do It</p>
             <h2 className="display-tight max-w-2xl text-3xl md:text-5xl">
-              {p.approach.length} phases.
+              {p.approach.length} steps.
               <br />
-              <span className="text-[var(--ink-3)]">No guesswork — only measurable execution.</span>
+              <span className="text-[var(--ink-3)]">Nothing left vague.</span>
             </h2>
           </Reveal>
 
@@ -199,9 +199,9 @@ export default async function PracticePage({
         <section className="border-t hairline">
           <div className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10 lg:py-28">
             <Reveal className="mb-12">
-              <p className="mono-label mb-6 text-[var(--gold)]">Inside the Practice</p>
+              <p className="mono-label mb-6 text-[var(--gold)]">Inside This Service</p>
               <h2 className="display-tight max-w-2xl text-3xl md:text-5xl">
-                Seven performance engines.
+                Seven ways we improve your factory.
               </h2>
             </Reveal>
             <Stagger className="grid gap-px bg-[var(--line)] md:grid-cols-2 lg:grid-cols-4" gap={0.05}>
@@ -234,7 +234,7 @@ export default async function PracticePage({
           <div className="grid gap-16 lg:grid-cols-[1fr_1.4fr] lg:gap-24">
             <div>
               <Reveal>
-                <p className="mono-label mb-6 text-[var(--gold)]">What Moves</p>
+                <p className="mono-label mb-6 text-[var(--gold)]">What Improves</p>
               </Reveal>
               <Stagger gap={0.08}>
                 {p.outcomes.map((o) => (
@@ -252,7 +252,7 @@ export default async function PracticePage({
 
             <div>
               <Reveal>
-                <p className="mono-label mb-6 text-[var(--gold)]">Capabilities</p>
+                <p className="mono-label mb-6 text-[var(--gold)]">What We Do</p>
               </Reveal>
               <Stagger className="flex flex-wrap gap-2.5" gap={0.025}>
                 {p.services.map((s) => (
@@ -272,9 +272,9 @@ export default async function PracticePage({
       <section className="border-t hairline bg-[var(--panel)]">
         <div className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10 lg:py-28">
           <Reveal className="mb-12">
-            <p className="mono-label mb-6 text-[var(--gold)]">Where This Connects</p>
+            <p className="mono-label mb-6 text-[var(--gold)]">Works Well With</p>
             <h2 className="display-tight max-w-2xl text-3xl md:text-4xl">
-              No rung of the ladder stands alone.
+              These services work better together.
             </h2>
           </Reveal>
           <div className="grid gap-px bg-[var(--line)] md:grid-cols-2">
@@ -305,7 +305,7 @@ export default async function PracticePage({
           <Link href={`/practices/${next.slug}`} className="group flex items-center justify-between gap-6">
             <div>
               <p className="mono-label mb-3 text-[var(--ink-3)]">
-                Next Practice — {next.index} · {next.verb}
+                Next Service — {next.index} · {next.verb}
               </p>
               <p className="display-tight text-2xl transition-colors duration-300 group-hover:text-[var(--gold)] md:text-4xl">
                 {next.name}
@@ -327,8 +327,8 @@ export default async function PracticePage({
       <Cta
         kicker={p.verb}
         lineA={p.headline[0]}
-        lineB="Let's find out what that's worth in your business."
-        button="Start the Conversation"
+        lineB="Let us show you what that means in rupees."
+        button="Talk To Us"
         href="/contact"
       />
     </>

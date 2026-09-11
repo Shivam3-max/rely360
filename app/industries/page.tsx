@@ -10,15 +10,15 @@ export default function IndustriesPage() {
   return (
     <>
       <PageHero
-        kicker="Where We Transform"
+        kicker="Industries We Work In"
         title={
           <>
-            If it manufactures,
+            If you manufacture it,
             <br />
-            <span className="serif-i text-[var(--gold)]">we can transform it.</span>
+            <span className="serif-i text-[var(--gold)]">we can improve it.</span>
           </>
         }
-        sub="Different industries leak profit in different places. The system that finds it is the same."
+        sub="Every industry loses money in different places. The way we find it is the same."
       />
 
       <section>

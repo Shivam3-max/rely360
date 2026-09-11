@@ -25,9 +25,9 @@ const fragment = Fragment_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RELY360 — From Running a Factory to Owning an Enterprise",
+  title: "RELY360 — More Profit From Your Factory",
   description:
-    "Five practices, one partner: operations excellence, brand & D2C transformation, franchise expansion, capital & M&A, and compliance. India's 360° business transformation firm for manufacturers and industrial businesses.",
+    "Five services, one partner: cut factory costs, start your own D2C brand, expand through franchise, raise funding or sell your business, and fix compliance. For manufacturers and business owners across India.",
 };
 
 export default function RootLayout({

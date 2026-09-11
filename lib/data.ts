@@ -646,7 +646,7 @@ export const journal: JournalEntry[] = [
   {
     slug: "anatomy-of-profit-leakage",
     topic: "Profit Leakage",
-    title: "The anatomy of profit leakage",
+    title: "Where factories actually lose money",
     dek: "Factories rarely lose money in one place. They lose it in hundreds of small places, every single day.",
     read: "6 min",
     date: "2026-06-12",
@@ -661,7 +661,7 @@ export const journal: JournalEntry[] = [
   {
     slug: "oee-is-a-mirror",
     topic: "Manufacturing",
-    title: "OEE is a mirror, not a metric",
+    title: "Your machines are slower than you think",
     dek: "Most plants that measure OEE measure it wrong — and the ones that measure it right often can't look at it honestly.",
     read: "5 min",
     date: "2026-05-28",
@@ -675,7 +675,7 @@ export const journal: JournalEntry[] = [
   {
     slug: "sops-are-leadership",
     topic: "Leadership",
-    title: "SOPs are a leadership act",
+    title: "Why writing things down is the owner's job",
     dek: "The absence of standard operating procedures is never a documentation problem. It's a delegation problem wearing a disguise.",
     read: "5 min",
     date: "2026-05-09",
@@ -703,7 +703,7 @@ export const journal: JournalEntry[] = [
   {
     slug: "digital-that-pays-back",
     topic: "Technology",
-    title: "Digital transformation that actually pays back",
+    title: "Software that actually pays for itself",
     dek: "Most factory digitization fails the same way: technology first, question second. Reverse the order and it pays for itself.",
     read: "5 min",
     date: "2026-03-30",
@@ -717,7 +717,7 @@ export const journal: JournalEntry[] = [
   {
     slug: "growth-is-a-system",
     topic: "Growth",
-    title: "Growth is a system, not a sales target",
+    title: "A sales target is not a growth plan",
     dek: "Ambitious revenue targets fail quietly every year. Demand systems compound quietly every year. Choose the second.",
     read: "5 min",
     date: "2026-03-08",
@@ -731,7 +731,7 @@ export const journal: JournalEntry[] = [
   {
     slug: "the-udhari-trap",
     topic: "Brand & D2C",
-    title: "The udhari trap",
+    title: "The udhari problem",
     dek: "Ninety-day credit isn't a payment term. It's an interest-free loan you make to your customer, funded by a loan you pay interest on.",
     read: "7 min",
     date: "2026-08-22",
@@ -763,7 +763,7 @@ export const journal: JournalEntry[] = [
   {
     slug: "why-most-smes-are-unsellable",
     topic: "Capital & Exit",
-    title: "Why most SMEs are unsellable",
+    title: "Why most businesses cannot be sold",
     dek: "The gap between what a business earns and what it fetches is almost never about the numbers. It is about who the numbers depend on.",
     read: "6 min",
     date: "2026-07-14",
@@ -779,7 +779,7 @@ export const journal: JournalEntry[] = [
   {
     slug: "governance-is-not-paperwork",
     topic: "Governance",
-    title: "Governance is not paperwork",
+    title: "Compliance is not just paperwork",
     dek: "Compliance built for audit week delivers nothing. Compliance built into the operating rhythm quietly raises the value of the whole company.",
     read: "5 min",
     date: "2026-06-28",

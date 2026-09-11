@@ -7,14 +7,14 @@ import { motion } from "motion/react";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 const FIELDS = [
-  { key: "units", label: "Units you ship per month", unit: "units", def: 50000, help: "Current B2B / contract volume" },
+  { key: "units", label: "Units you ship per month", unit: "units", def: 50000, help: "What you supply to other companies today" },
   { key: "cost", label: "Your manufacturing cost", unit: "₹/unit", def: 46 },
   { key: "b2b", label: "Your B2B selling price", unit: "₹/unit", def: 52 },
-  { key: "credit", label: "Credit you extend", unit: "days", def: 75, help: "From dispatch to money in bank" },
-  { key: "mrp", label: "Price the consumer pays", unit: "₹/unit", def: 199, help: "What your product retails at under someone else's label" },
-  { key: "cac", label: "Marketing cost per D2C order", unit: "₹", def: 60, help: "Realistic first-year CAC for your category" },
-  { key: "fulfil", label: "Fulfilment, payment & returns", unit: "₹/order", def: 45, help: "Shipping, gateway fees, RTO allowance" },
-  { key: "shift", label: "Volume moved to D2C in year one", unit: "%", def: 10, help: "Start small — this is deliberately conservative" },
+  { key: "credit", label: "Credit you extend", unit: "days", def: 75, help: "From sending goods to money in your bank" },
+  { key: "mrp", label: "Price the consumer pays", unit: "₹/unit", def: 199, help: "What it sells for in the market under someone else's brand" },
+  { key: "cac", label: "Advertising cost to get one order", unit: "₹", def: 60, help: "What you spend on ads per order in year one" },
+  { key: "fulfil", label: "Delivery, payment charges & returns", unit: "₹/order", def: 45, help: "Courier, payment gateway fees, returned orders" },
+  { key: "shift", label: "How much you sell under your own brand", unit: "%", def: 10, help: "Year one. Start small — this is kept deliberately low" },
 ] as const;
 
 const rupee = (n: number) => {
@@ -99,7 +99,7 @@ export default function MarginLadder() {
 
       {/* ── results ── */}
       <div>
-        <p className="mono-label mb-6 text-[var(--gold)]">Where the value actually goes</p>
+        <p className="mono-label mb-6 text-[var(--gold)]">Where your money actually goes</p>
 
         {/* the ladder of value on one unit */}
         <div className="border hairline bg-[var(--panel)] p-6 md:p-8">
@@ -110,8 +110,8 @@ export default function MarginLadder() {
           <div className="space-y-5">
             {[
               { label: "Your manufacturing cost", val: v.cost, tone: "ink3" },
-              { label: "Your margin today", val: r.b2bMargin, tone: "ink" },
-              { label: "Captured downstream — not by you", val: r.downstream, tone: "red" },
+              { label: "What you earn today", val: r.b2bMargin, tone: "ink" },
+              { label: "What the brand earns — not you", val: r.downstream, tone: "red" },
             ].map((row) => (
               <div key={row.label}>
                 <div className="mb-1.5 flex items-baseline justify-between gap-4">
@@ -139,7 +139,7 @@ export default function MarginLadder() {
             <div className="border-t hairline pt-5">
               <div className="mb-1.5 flex items-baseline justify-between gap-4">
                 <span className="text-[0.82rem] text-[var(--gold)]">
-                  Your contribution if you own the brand
+                  What you would earn with your own brand
                 </span>
                 <span className="mono-num text-[0.95rem] text-[var(--gold)]">
                   ₹{r.d2cContribution.toFixed(2)}
@@ -153,7 +153,7 @@ export default function MarginLadder() {
                 />
               </div>
               <p className="mt-2 text-[0.68rem] text-[var(--ink-3)]">
-                After manufacturing cost, marketing, fulfilment, payment fees and returns.
+                After making cost, advertising, delivery, payment charges and returns.
               </p>
             </div>
           </div>
@@ -162,21 +162,21 @@ export default function MarginLadder() {
         {/* headline numbers */}
         <div className="mt-6 grid gap-px bg-[var(--line)] sm:grid-cols-2">
           <div className="bg-[var(--panel)] p-6">
-            <p className="mono-label mb-3 text-[var(--ink-3)]">Margin today</p>
+            <p className="mono-label mb-3 text-[var(--ink-3)]">You earn today</p>
             <p className="display-tight text-3xl">{r.b2bMarginPct.toFixed(1)}%</p>
             <p className="mt-2 text-[0.7rem] text-[var(--ink-2)]">
               ₹{r.b2bMargin.toFixed(2)} on every unit you make
             </p>
           </div>
           <div className="bg-[var(--panel)] p-6">
-            <p className="mono-label mb-3 text-[var(--ink-3)]">Margin owning the brand</p>
+            <p className="mono-label mb-3 text-[var(--ink-3)]">With your own brand</p>
             <p className="display-tight text-3xl text-[var(--gold)]">
               {r.d2cContributionPct.toFixed(1)}%
             </p>
             <p className="mt-2 text-[0.7rem] text-[var(--ink-2)]">
               {r.viable && r.multiple > 1
-                ? `${r.multiple.toFixed(1)}× your margin per unit`
-                : "Adjust CAC or price — this category needs work"}
+                ? `${r.multiple.toFixed(1)}× more on every unit`
+                : "Change the advertising cost or price to make this work"}
             </p>
           </div>
         </div>
@@ -185,21 +185,21 @@ export default function MarginLadder() {
         <div className="mt-6 space-y-px bg-[var(--line)]">
           <div className="bg-[var(--dark)] p-6 text-[var(--paper-on-dark)] md:p-8">
             <p className="mono-label mb-3 text-[var(--gold-2)]">
-              Cash sitting in other people's businesses
+              Your money stuck with buyers
             </p>
             <p className="display text-4xl text-[var(--gold-2)] md:text-5xl">
               {rupee(r.cashLocked)}
             </p>
             <p className="mt-3 text-[0.8rem] leading-relaxed opacity-70">
               At {v.credit} days of credit on {rupee(v.units * v.b2b * 12)} of annual revenue.
-              That is working capital you have financed, insured, and borrowed against —
-              to fund your customer's business.
+              This is your money, sitting in your buyers' businesses. You borrow from the
+              bank and pay interest, while funding their business for free.
             </p>
           </div>
 
           <div className="bg-[var(--panel)] p-6 md:p-8">
             <p className="mono-label mb-3 text-[var(--gold)]">
-              Moving just {v.shift}% of volume to your own brand
+              If you sell just {v.shift}% under your own brand
             </p>
             <p className="display text-4xl md:text-5xl">
               {r.uplift >= 0 ? "+" : ""}
@@ -208,20 +208,20 @@ export default function MarginLadder() {
             </p>
             <p className="mt-3 text-[0.8rem] leading-relaxed text-[var(--ink-2)]">
               Same factory. Same product. Same {Math.round(r.shiftedUnits).toLocaleString("en-IN")} units —
-              sold to the person who actually uses them, and paid for on dispatch instead of in ninety days.
+              sold directly to the customer who uses them, and paid for immediately instead of after 90 days.
             </p>
           </div>
         </div>
 
         <p className="mt-5 text-[0.7rem] leading-relaxed text-[var(--ink-3)]">
-          Indicative model for discussion, not a forecast. Real feasibility depends on category,
-          repeat rate, differentiation and regulatory load — which is exactly what the first
-          phase of our work establishes.
+          These are rough figures to start a discussion, not a promise. Whether it will actually
+          work depends on your product, repeat buying and licences — which is exactly what we
+          check in the first step.
         </p>
 
         <div className="mt-7">
           <Link href="/contact" className="btn-ink">
-            Pressure-test this with a partner
+            Talk to us about your numbers
             <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
               <path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" strokeWidth="1.2" />
             </svg>

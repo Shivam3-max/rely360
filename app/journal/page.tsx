@@ -10,15 +10,15 @@ export default function JournalPage() {
   return (
     <>
       <PageHero
-        kicker="Performance Journal"
+        kicker="Articles"
         title={
           <>
-            Thinking that
+            Simple articles about
             <br />
-            <span className="serif-i text-[var(--gold)]">compounds.</span>
+            <span className="serif-i text-[var(--gold)]">making more money.</span>
           </>
         }
-        sub="Field notes on profit leakage, leadership, quality, and growth — written from factory floors, not conference rooms."
+        sub="Short, practical articles on where factories lose money, how to build a brand, and how to grow — written from the shop floor, not a meeting room."
       />
 
       <section>
@@ -56,10 +56,10 @@ export default function JournalPage() {
       </section>
 
       <Cta
-        kicker="Beyond Reading"
-        lineA="Insight is free."
-        lineB="Implementation is where we earn our keep."
-        button="Begin the Assessment"
+        kicker="Next Step"
+        lineA="Reading is free."
+        lineB="Doing it is where we help."
+        button="Get a Free Business Check"
       />
     </>
   );

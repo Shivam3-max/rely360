@@ -6,13 +6,13 @@ import { useEffect, useState } from "react";
 import { motion, useScroll, useSpring, AnimatePresence } from "motion/react";
 
 const links = [
-  { href: "/practices", label: "Practices" },
+  { href: "/practices", label: "Services" },
   { href: "/system", label: "How We Work" },
-  { href: "/industries", label: "Where We Transform" },
-  { href: "/stories", label: "Stories" },
-  { href: "/journal", label: "Journal" },
-  { href: "/architects", label: "The Architects" },
-  { href: "/contact", label: "Start the Conversation" },
+  { href: "/industries", label: "Industries" },
+  { href: "/stories", label: "Results" },
+  { href: "/journal", label: "Articles" },
+  { href: "/architects", label: "Our Team" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 function ProgressRing() {
@@ -100,7 +100,7 @@ export default function Nav() {
 
           <div className="flex items-center gap-4">
             <Link href="/assessment" className="btn-ink hidden md:inline-flex !py-3 !px-5">
-              Unlock Hidden Profit
+              Free Business Check
             </Link>
             <button
               aria-label="Menu"
@@ -154,7 +154,7 @@ export default function Nav() {
                 className="pt-8"
               >
                 <Link href="/assessment" className="btn-ink">
-                  Unlock Hidden Profit
+                  Free Business Check
                 </Link>
               </motion.div>
             </nav>

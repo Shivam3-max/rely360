@@ -47,22 +47,22 @@ function ScoreRing({ score }: { score: number }) {
 function verdict(score: number) {
   if (score >= 80)
     return {
-      title: "Performance-led. Now compound it.",
-      note: "Your systems are strong. The opportunity now is integration — making seven good engines behave like one great machine, and defending the gains as you scale.",
+      title: "You are running well. Now go further.",
+      note: "Your systems are strong. The next step is making all seven areas work together as one, and protecting these gains as you grow.",
     };
   if (score >= 60)
     return {
-      title: "Solid foundations. Serious upside.",
-      note: "You run better than most — and that's exactly why the remaining leaks are expensive. The gap between where you are and where the system could take you is measured in EBITDA points.",
+      title: "Good base. A lot still left.",
+      note: "You run better than most factories. That is exactly why the remaining losses are costly. The gap between where you are and where you could be is worth several percent of profit.",
     };
   if (score >= 40)
     return {
-      title: "Profit is leaking — daily.",
-      note: "Pockets of discipline exist, but the functions aren't working as one system. In our experience this profile hides 15–25% capacity and several points of margin.",
+      title: "You are losing money every day.",
+      note: "Some areas are well run, but they are not working together. In our experience a business like this is hiding 15 to 25 percent extra capacity and a few percent of profit.",
     };
   return {
-    title: "Enormous hidden profit.",
-    note: "Almost everything runs on effort and memory instead of systems. That's not a weakness — it's the single largest profit opportunity a business can have. Every improvement will be visible in the P&L.",
+    title: "There is a lot of money to save.",
+    note: "Almost everything runs on hard work and memory instead of systems. That is not a weakness — it is the biggest profit opportunity a business can have. Every fix will show up directly in your profit.",
   };
 }
 
@@ -108,20 +108,20 @@ export default function AssessmentPage() {
               transition={{ duration: 0.7, ease: EASE }}
               className="pt-14 text-center"
             >
-              <p className="mono-label mb-8 text-[var(--gold)]">The Performance Assessment</p>
+              <p className="mono-label mb-8 text-[var(--gold)]">Free Business Check</p>
               <h1 className="display text-5xl md:text-7xl">
-                Discover your hidden
+                Find out how much money
                 <br />
-                <span className="serif-i text-[var(--gold)]">profit potential.</span>
+                <span className="serif-i text-[var(--gold)]">your business is losing.</span>
               </h1>
               <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-[var(--ink-2)]">
-                Twenty questions. Five minutes. Answer honestly — the score only works if the
-                answers are true. You'll see exactly where your business stands operationally,
-                and which rung of the ladder is actually holding you back.
+                Twenty questions. Five minutes. Answer honestly — the score is only useful if
+                the answers are true. You will see exactly where your business stands and which
+                part is holding you back.
               </p>
               <div className="mt-12">
                 <button onClick={() => setStep(0)} className="btn-ink">
-                  Begin the Assessment
+                  Start the Free Check
                   <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
                     <path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" strokeWidth="1.2" />
                   </svg>

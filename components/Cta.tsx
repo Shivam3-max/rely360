@@ -2,10 +2,10 @@ import Link from "next/link";
 import { Reveal } from "./Reveal";
 
 export default function Cta({
-  kicker = "The Question",
-  lineA = "What could your business become…",
-  lineB = "…if every function worked together?",
-  button = "Schedule a Performance Assessment",
+  kicker = "Next Step",
+  lineA = "How much more could your business earn?",
+  lineB = "Let's find out — free, no obligation.",
+  button = "Book a Free Consultation",
   href = "/assessment",
 }: {
   kicker?: string;

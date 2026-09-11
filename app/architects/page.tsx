@@ -9,15 +9,15 @@ export default function ArchitectsPage() {
   return (
     <>
       <PageHero
-        kicker="The Architects"
+        kicker="Our Team"
         title={
           <>
-            Four specialists.
+            Four experts.
             <br />
-            <span className="serif-i text-[var(--gold)]">One transformation team.</span>
+            <span className="serif-i text-[var(--gold)]">One team for your business.</span>
           </>
         }
-        sub="Not career consultants. Operators — people who have run plants, built quality systems, led organizations, and scaled demand. Now they do it for yours."
+        sub="Not career consultants. These are people who have actually run factories, built quality systems, led teams and grown sales. Now they do it for your business."
       />
 
       <section className="section-dark">
@@ -56,7 +56,7 @@ export default function ArchitectsPage() {
 
           <Reveal delay={0.15} className="mt-16 text-center">
             <p className="serif-i text-2xl opacity-80 md:text-3xl">
-              We don't leave after recommendations. We stay through implementation.
+              We don't just give a report and leave. We stay until the work is done.
             </p>
           </Reveal>
         </div>
@@ -68,18 +68,18 @@ export default function ArchitectsPage() {
           <Reveal className="mb-14">
             <p className="mono-label mb-6 text-[var(--gold)]">Why RELY360</p>
             <h2 className="display-tight max-w-3xl text-3xl md:text-5xl">
-              Not because we're consultants.
+              We don't just give advice.
               <br />
-              <span className="text-[var(--ink-3)]">Because we own outcomes.</span>
+              <span className="text-[var(--ink-3)]">We stay until it works.</span>
             </h2>
           </Reveal>
           <Stagger className="grid gap-px bg-[var(--line)] sm:grid-cols-2 lg:grid-cols-5" gap={0.07}>
             {[
-              "We stay through implementation",
+              "We stay until the work is done",
               "We train teams",
               "We build systems",
-              "We measure impact",
-              "We create sustainable transformation",
+              "We measure the results",
+              "We make changes that last",
             ].map((x, i) => (
               <StaggerItem key={x} className="bg-[var(--paper)]">
                 <div className="flex min-h-[170px] flex-col justify-between p-7 transition-colors duration-500 hover:bg-[var(--panel)]">
@@ -95,10 +95,10 @@ export default function ArchitectsPage() {
       </section>
 
       <Cta
-        kicker="Start the Conversation"
-        lineA="Talk to an architect."
+        kicker="Contact Us"
+        lineA="Talk to an expert."
         lineB="Not a salesperson."
-        button="Schedule a Performance Assessment"
+        button="Book a Free Consultation"
       />
     </>
   );

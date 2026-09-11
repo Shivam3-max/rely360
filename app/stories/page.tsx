@@ -11,7 +11,7 @@ export default function StoriesPage() {
   return (
     <>
       <PageHero
-        kicker="Transformation Stories"
+        kicker="Client Results"
         title={
           <>
             Before.
@@ -19,7 +19,7 @@ export default function StoriesPage() {
             <span className="serif-i text-[var(--gold)]">After.</span>
           </>
         }
-        sub="Not testimonials. Case studies — the problem, the investigation, the solution, the measured result. Engagement details anonymized; the numbers are the kind we sign up for."
+        sub="Not customer praise. Real cases — the problem, what we found, what we did, and the numbers that changed. Client names are kept private."
       />
 
       <section>
@@ -85,10 +85,10 @@ export default function StoriesPage() {
       </section>
 
       <Cta
-        kicker="Your Story"
-        lineA="The next transformation story"
-        lineB="could carry your numbers."
-        button="Start the Conversation"
+        kicker="Your Business"
+        lineA="The next result on this page"
+        lineB="could be your business."
+        button="Talk To Us"
         href="/contact"
       />
     </>

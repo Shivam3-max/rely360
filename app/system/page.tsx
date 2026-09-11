@@ -15,12 +15,12 @@ export default function SystemPage() {
         kicker="How We Work"
         title={
           <>
-            A business is not departments.
+            Everything in your business
             <br />
-            <span className="serif-i text-[var(--gold)]">It's one system.</span>
+            <span className="serif-i text-[var(--gold)]">is connected.</span>
           </>
         }
-        sub="Purchase feeds production. Production feeds quality. Quality feeds people. Margin feeds capital. Capital feeds expansion. Break one — everything breaks. Whichever practice we're engaged for, this is the discipline underneath it."
+        sub="Buying affects production. Production affects quality. Quality affects customers. Profit decides what funding you can get. Funding decides how fast you grow. Break one and the rest suffer. Whichever service you take, this is how we think."
       />
 
       {/* why rely360 exists */}
@@ -28,7 +28,7 @@ export default function SystemPage() {
         <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-32">
           <div className="grid gap-16 lg:grid-cols-2">
             <Reveal>
-              <p className="mono-label mb-8 text-[var(--gold)]">Why RELY360 Exists</p>
+              <p className="mono-label mb-8 text-[var(--gold)]">Why We Started</p>
               <h2 className="display-tight text-3xl md:text-5xl">
                 Most businesses hire a different consultant for each issue.
               </h2>
@@ -61,16 +61,16 @@ export default function SystemPage() {
               </Reveal>
               <Reveal delay={0.38}>
                 <p className="mt-6 max-w-md text-sm leading-relaxed text-[var(--ink-2)]">
-                  It gets worse further up. An operations consultant, a marketing agency, a
-                  franchise broker, an investment banker and a compliance firm — five vendors,
-                  five worldviews, and not one of them accountable for whether the business is
-                  actually worth more at the end of it.
+                  It gets worse as you grow. An operations consultant, a marketing agency, a
+                  franchise broker, an investment banker and a compliance firm — five different
+                  people, five different opinions, and not one of them responsible for whether
+                  your business is actually worth more at the end.
                 </p>
               </Reveal>
               <Reveal delay={0.45}>
                 <div className="mt-8">
                   <Link href="/practices" className="link-arrow">
-                    See the five practices
+                    See all five services
                     <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
                       <path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" strokeWidth="1.2" />
                     </svg>
@@ -88,9 +88,9 @@ export default function SystemPage() {
           <Reveal className="mb-20 text-center">
             <p className="mono-label mb-6 text-[var(--gold)]">What 360° Means</p>
             <h2 className="display-tight mx-auto max-w-3xl text-3xl md:text-5xl">
-              Every department works together.
+              Every department affects the others.
               <br />
-              <span className="text-[var(--ink-3)]">So should every solution.</span>
+              <span className="text-[var(--ink-3)]">So we fix them together.</span>
             </h2>
           </Reveal>
           <Circle360 />
@@ -101,11 +101,11 @@ export default function SystemPage() {
       <section className="border-t hairline bg-[var(--panel)]">
         <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-32">
           <Reveal className="mb-20">
-            <p className="mono-label mb-6 text-[var(--gold)]">The Chain of Profit</p>
+            <p className="mono-label mb-6 text-[var(--gold)]">How One Rupee Becomes Profit</p>
             <h2 className="display-tight text-3xl md:text-5xl">
-              One rupee of revenue.
+              One rupee of sales.
               <br />
-              <span className="text-[var(--ink-3)]">Seven chances to lose it — or multiply it.</span>
+              <span className="text-[var(--ink-3)]">Seven places you can lose it.</span>
             </h2>
           </Reveal>
 
@@ -149,11 +149,11 @@ export default function SystemPage() {
       <section className="section-dark">
         <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-32">
           <Reveal className="mb-16">
-            <p className="mono-label mb-6 text-[var(--gold-2)]">Our Transformation Framework</p>
+            <p className="mono-label mb-6 text-[var(--gold-2)]">How We Work, Step by Step</p>
             <h2 className="display-tight text-3xl md:text-5xl">
-              Every engagement follows one disciplined system.
+              Every project follows the same steps.
               <br />
-              <span className="serif-i text-[var(--gold-2)]">No guesswork. Only measurable execution.</span>
+              <span className="serif-i text-[var(--gold-2)]">Nothing left to guesswork.</span>
             </h2>
           </Reveal>
 
@@ -180,7 +180,7 @@ export default function SystemPage() {
         <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-32">
           <div className="mb-16 flex flex-wrap items-end justify-between gap-8">
             <Reveal>
-              <p className="mono-label mb-6 text-[var(--gold)]">We Measure What Matters</p>
+              <p className="mono-label mb-6 text-[var(--gold)]">We Measure Results</p>
               <h2 className="display-tight text-3xl md:text-5xl">
                 Success is measured by outcomes.
                 <br />

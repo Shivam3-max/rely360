@@ -1,560 +1,560 @@
 // ─────────────────────────────────────────────────────────────
-// RELY360 — The Value Ladder
-// Five practices. One firm. From running a factory to owning an enterprise.
+// RELY360 — The five services
+// Plain words. Every headline should make sense in one read.
 // ─────────────────────────────────────────────────────────────
 
 export type Practice = {
   slug: string;
   index: string;
-  verb: string; // OPERATE / OWN / MULTIPLY / UNLOCK / GOVERN
+  verb: string; // short, plain label used on the ladder
   name: string;
-  short: string; // one line, ≤15 words
-  rung: string; // what this rung of the ladder does
+  short: string; // one line, plain
+  rung: string; // what this step does, in plain words
   headline: [string, string];
-  thesis: string[]; // the argument, 2–3 paragraphs
+  thesis: string[];
   problems: { title: string; detail: string }[];
   approach: { phase: string; title: string; detail: string }[];
   outcomes: { metric: string; direction: "up" | "down" }[];
   services: string[];
-  linksTo: { slug: string; why: string }[]; // how practices interlock
+  linksTo: { slug: string; why: string }[];
 };
 
 export const practices: Practice[] = [
-  // ═══════════════════ 01 · OPERATE ═══════════════════
+  // ═══════════════════ 01 ═══════════════════
   {
     slug: "operations",
     index: "01",
-    verb: "Operate",
-    name: "Manufacturing & Operations Excellence",
-    short: "Factories that run faster, leaner, and far more profitably.",
-    rung: "Make the business profitable at its core.",
-    headline: ["Every factory has hidden profit.", "We find it."],
+    verb: "Cut Costs",
+    name: "Factory & Operations Improvement",
+    short: "Make more profit from the factory you already own.",
+    rung: "Stop the money your factory loses every day.",
+    headline: ["Your factory is losing money", "every single day."],
     thesis: [
-      "Manufacturers rarely fail for lack of orders. They fail because profit leaks every day — from machines running below rated speed, from changeovers nobody standardised, from purchase prices never challenged, from rework treated as part of the job.",
-      "Each leak is individually survivable. Together they routinely consume five to ten points of EBITDA. And because they live in the gaps between departments, nobody owns them.",
-      "This is the first rung of the ladder for a reason. A business that isn't profitable at its core cannot be branded, franchised, or sold at a serious multiple. Everything above depends on this being solved first.",
+      "Most factories don't have an order problem. They have a leak problem. Machines run slower than they should. Changeovers take 90 minutes when they could take 30. Purchase prices haven't been questioned in three years. Rework is treated as normal.",
+      "Each leak looks small on its own. Together they usually eat 5 to 10 percent of your profit every year. And because these problems sit between departments, nobody in the company actually owns them.",
+      "This is the first step for a simple reason. A factory that isn't making good profit cannot be branded, franchised, or sold for a good price. Everything else depends on fixing this first.",
     ],
     problems: [
       {
-        title: "Capacity you already own, invisible",
+        title: "You already own machines you're not using fully",
         detail:
-          "Honest OEE in most Indian mid-size plants sits in the 50s. The gap between that and 70% is a machine you already paid for — hiding in plain sight.",
+          "In most Indian factories, machines actually run at 50-55% of their real capacity. Getting to 70% is like buying a new machine — except you already paid for this one.",
       },
       {
-        title: "Costs negotiated on habit, not evidence",
+        title: "You buy on last year's price, not the right price",
         detail:
-          "Without a should-cost model, the supplier's opening number anchors every negotiation. Three years of that compounds into permanent margin loss.",
+          "If you don't know what a part should cost to make, the supplier's first price becomes your price. Three years of this quietly costs you lakhs.",
       },
       {
-        title: "Quality inspected in, not built in",
+        title: "Rework is eating profit nobody counts",
         detail:
-          "First pass yield stays low while inspection headcount grows. The cost of poor quality — rework, scrap, claims, lost accounts — runs 3–8% of revenue, mostly off the books.",
+          "Scrap, rework, extra checking, customer complaints — together this usually costs 3 to 8 percent of your total sales. Most of it never shows up in your accounts.",
       },
       {
-        title: "Everything depends on three people",
+        title: "Everything depends on 2 or 3 people",
         detail:
-          "No SOPs, no KPIs, no structure — only tribal knowledge. The business cannot scale beyond the founder's attention span.",
+          "No written processes, no clear targets, no system — only what is in a few people's heads. The business cannot grow bigger than the owner's attention.",
       },
     ],
     approach: [
       {
         phase: "01",
-        title: "Diagnose the whole system",
+        title: "We study your whole plant",
         detail:
-          "A structured plant and business diagnostic across all seven operating functions — hundreds of checkpoints, scored, evidenced, and priced in rupees.",
+          "A full check of your factory and business across all seven areas — hundreds of points, scored with evidence, and every problem converted into a rupee figure.",
       },
       {
         phase: "02",
-        title: "Price every leak",
+        title: "We put a number on every leak",
         detail:
-          "Each finding becomes a number: OEE gap × contribution, waste % × material spend, should-cost gap × annual volume. Opinions become arithmetic.",
+          "Machine gap × profit per unit. Waste % × material cost. Price gap × yearly quantity. Opinions become simple arithmetic everyone can check.",
       },
       {
         phase: "03",
-        title: "Implement on the floor",
+        title: "We fix it on the shop floor",
         detail:
-          "SMED on the bottleneck. Clean-sheet costing into negotiations. FPY boards at every cell. SOPs, KPIs, and daily reviews that survive our departure.",
+          "Faster changeovers. Better buying prices. Quality boards at every line. Written processes, clear targets, and daily reviews that continue after we leave.",
       },
       {
         phase: "04",
-        title: "Bank the savings",
+        title: "We prove the savings",
         detail:
-          "Every initiative carries a locked baseline and a monthly value entry, verified by the client's own finance team. We report banked rupees, not activity.",
+          "Every improvement gets a starting figure and a monthly saving, checked by your own accounts team. We report money saved, not meetings held.",
       },
     ],
     outcomes: [
-      { metric: "Machine OEE", direction: "up" },
+      { metric: "Machine output", direction: "up" },
       { metric: "Cost per unit", direction: "down" },
-      { metric: "First pass yield", direction: "up" },
-      { metric: "EBITDA", direction: "up" },
+      { metric: "Rejections & rework", direction: "down" },
+      { metric: "Profit", direction: "up" },
     ],
     services: [
-      "Plant & Business Diagnostics",
-      "OEE & Capacity Unlock",
+      "Full Factory Audit",
+      "Machine Output (OEE) Improvement",
       "Lean, TPM, 5S, Kaizen",
-      "SMED & Changeover Reduction",
-      "Clean-Sheet Costing",
-      "Vendor Negotiation",
-      "Quality Systems & FPY",
+      "Faster Changeovers (SMED)",
+      "Costing & Price Benchmarking",
+      "Supplier Price Negotiation",
+      "Quality Systems",
       "Rework & Scrap Reduction",
-      "SOP & KPI Frameworks",
+      "Written Processes (SOPs) & Targets",
       "Manpower Productivity",
-      "Energy & Utility Optimization",
-      "Working Capital & Inventory",
+      "Power & Fuel Cost Reduction",
+      "Stock & Working Capital Control",
     ],
     linksTo: [
       {
         slug: "capital",
-        why: "Operational maturity is what a buyer or investor actually pays a premium for.",
+        why: "Buyers and investors pay much more for a factory that runs on systems.",
       },
       {
         slug: "franchise",
-        why: "You cannot replicate a unit whose economics you haven't yet proven.",
+        why: "You cannot copy a business model until you have proved it makes money.",
       },
     ],
   },
 
-  // ═══════════════════ 02 · OWN ═══════════════════
+  // ═══════════════════ 02 ═══════════════════
   {
     slug: "brand-demand",
     index: "02",
-    verb: "Own",
-    name: "Brand, Demand & D2C Transformation",
-    short: "Stop making margin for someone else's label. Own the customer.",
-    rung: "Own the demand — and the margin that comes with it.",
-    headline: ["You make the product.", "Someone else makes the margin."],
+    verb: "Sell Direct",
+    name: "Marketing & Your Own D2C Brand",
+    short: "Start your own brand and sell straight to customers — for cash.",
+    rung: "Stop selling on udhari. Start selling for cash.",
+    headline: ["You make the product.", "Someone else earns the profit."],
     thesis: [
-      "Here is the arithmetic almost every Indian manufacturer lives inside and rarely says out loud. You manufacture at 8–12% margin. The brand whose label goes on your product sells it at 60–70%. You carry the plant, the labour, the compliance, the quality risk — and you take the thinnest slice of the value you created.",
-      "Then you wait to be paid. Thirty days becomes forty-five, forty-five becomes ninety. Your working capital sits inside someone else's business, funding their growth. In India we have a gentle word for this: udhari. There is nothing gentle about what it does to a balance sheet.",
-      "The escape is not a new factory. It is the same factory, the same product, and a direct line to the customer. A D2C brand you own changes three things simultaneously: you get paid before or within days of dispatch instead of after ninety, you capture the brand margin instead of donating it, and you finally own the customer relationship — the only asset in this chain that appreciates.",
+      "Here is the maths most Indian manufacturers live with every day. You make the product and earn 8 to 12 percent. The company whose name goes on the packet sells the same product and earns 60 to 70 percent. You carry the factory, the workers, the licences and the quality risk — and take the smallest share.",
+      "Then you wait for your money. Thirty days becomes forty-five. Forty-five becomes ninety. This is udhari, and while you wait, your cash is sitting inside your buyer's business, helping them grow. You even borrow working capital and pay interest to keep this going.",
+      "The way out is not a new factory. It is the same factory, the same product, and your own brand selling directly to the customer. Three things change at once: you get paid immediately instead of after 90 days, you keep the brand profit instead of giving it away, and you finally own the customer — the only thing in this chain that becomes more valuable over time.",
     ],
     problems: [
       {
-        title: "The udhari trap",
+        title: "Your money is stuck in udhari",
         detail:
-          "Ninety-day receivables mean a quarter of your annual revenue is permanently parked in other people's businesses. You borrow working capital to fund your customers' cash flow, and pay interest for the privilege.",
+          "At 90 days credit, roughly one quarter of your yearly sales is always sitting with your buyers. You borrow money to run the factory while funding their business for free.",
       },
       {
-        title: "Someone else's brand equity",
+        title: "You are building someone else's name",
         detail:
-          "Every unit you ship builds a brand you don't own. If that customer consolidates suppliers or moves offshore, twenty years of manufacturing excellence has no consumer who knows your name.",
+          "Every box you ship makes another company's brand stronger. If that buyer changes supplier tomorrow, 20 years of good manufacturing leaves you with zero customers who know your name.",
       },
       {
-        title: "Price-taker economics",
+        title: "You cannot set your own price",
         detail:
-          "Annual price-down letters, reverse auctions, and 'the market rate' — because a commodity manufacturer has no pricing power. Brands set prices. Factories accept them.",
+          "Yearly price-reduction letters, reverse auctions, 'market rate' — because a factory without a brand has no pricing power. Brands decide prices. Factories accept them.",
       },
       {
-        title: "Invisible to the buyers who matter",
+        title: "Buyers cannot find you online",
         detail:
-          "For those who stay B2B, the plant head shortlists vendors from a phone at 11 PM. If your expertise isn't visible there, you're not losing deals — you never entered them.",
+          "Even for those staying B2B — purchase managers now search online before they call anyone. If you are not visible there, you are not losing orders. You never even got the enquiry.",
       },
     ],
     approach: [
       {
         phase: "01",
-        title: "Category & feasibility assessment",
+        title: "First we check if your product will work",
         detail:
-          "Not every product survives D2C. We test yours against average order value, repeat rate, shelf life, shipping economics, return risk, regulatory load, and genuine differentiation — before a rupee is spent.",
+          "Not every product sells well online. We check your price per order, repeat buying, shelf life, courier cost, return risk and licence requirements — before you spend a single rupee.",
       },
       {
         phase: "02",
-        title: "Brand creation",
+        title: "We build the brand",
         detail:
-          "Name, identity, packaging, positioning, and story. The hardest part is rarely design — it is the shift from thinking like a supplier to thinking like a brand that a consumer chooses.",
+          "Name, logo, packaging, positioning and story. The hardest part is not design. It is changing from thinking like a supplier to thinking like a brand customers choose.",
       },
       {
         phase: "03",
-        title: "Compliance & registration",
+        title: "We complete the licences",
         detail:
-          "FSSAI, CDSCO, AYUSH, BIS, legal metrology, trademark. In pharma, food, and cosmetics this is the step that quietly kills unprepared launches. We handle it as a workstream, not an afterthought.",
+          "FSSAI, CDSCO, AYUSH, BIS, weights and measures, trademark. In food, pharma and cosmetics this is exactly where unprepared launches get stuck. We handle it properly from day one.",
       },
       {
         phase: "04",
-        title: "Channel architecture",
+        title: "We choose where you sell",
         detail:
-          "Your own store, marketplaces, and quick commerce each behave differently on margin, settlement, and control. We sequence them deliberately instead of launching everywhere and bleeding everywhere.",
+          "Your own website, Amazon and Flipkart, and quick commerce apps each work differently on profit and payment. We start in the right order instead of launching everywhere and losing money everywhere.",
       },
       {
         phase: "05",
-        title: "Performance marketing engine",
+        title: "We run the advertising",
         detail:
-          "Meta and Google campaigns, a creative production rhythm, and ruthless CAC discipline. Creative volume — not clever targeting — is what actually moves acquisition cost in India today.",
+          "Meta and Google ads, regular new creatives, and strict control on what it costs to get one order. In India today, the number of ads you test matters more than clever targeting.",
       },
       {
         phase: "06",
-        title: "Retention & lifetime value",
+        title: "We make customers buy again",
         detail:
-          "First order is bought; profit lives in the second and third. WhatsApp flows, subscriptions, and repeat architecture are built from launch, not bolted on after a plateau.",
+          "The first order usually just covers its own cost. Real profit comes from the second and third. WhatsApp follow-ups and repeat offers are built in from the start, not added later.",
       },
       {
         phase: "07",
-        title: "Unit economics governance",
+        title: "We keep the numbers honest",
         detail:
-          "Contribution margin per order, CAC to LTV, RTO control, and a monthly review that kills what doesn't pay. This is where most D2C brands fail, and where a manufacturer's discipline is an unfair advantage.",
+          "Profit per order, cost to get a customer versus what they spend over time, and returns control — reviewed every month, stopping whatever doesn't pay. This is where most D2C brands fail and where a factory owner's discipline is a real advantage.",
       },
     ],
     outcomes: [
-      { metric: "Gross margin per unit", direction: "up" },
-      { metric: "Receivable days", direction: "down" },
-      { metric: "Customer ownership", direction: "up" },
-      { metric: "Revenue concentration", direction: "down" },
+      { metric: "Profit per unit", direction: "up" },
+      { metric: "Days to get paid", direction: "down" },
+      { metric: "Your own customers", direction: "up" },
+      { metric: "Dependence on few buyers", direction: "down" },
     ],
     services: [
-      "D2C Feasibility & Category Fit",
-      "Brand Strategy & Identity",
-      "Packaging & Product Design",
-      "Product Compliance & Registration",
-      "Ecommerce Store Build",
-      "Marketplace & Quick Commerce",
-      "Performance Marketing",
-      "Creative & Content Engine",
-      "Retention, CRM & WhatsApp",
-      "Unit Economics Governance",
-      "Industrial B2B Marketing",
-      "SEO & Lead Generation",
-      "Dealer & Distributor Development",
+      "D2C Feasibility Check",
+      "Brand Name & Identity",
+      "Packaging Design",
+      "Product Licences & Registration",
+      "Website & Online Store",
+      "Amazon, Flipkart & Quick Commerce",
+      "Google & Meta Advertising",
+      "Photos, Videos & Content",
+      "WhatsApp & Repeat Sales",
+      "Profit Tracking Per Order",
+      "B2B Industrial Marketing",
+      "Google Ranking (SEO) & Enquiries",
+      "Dealer & Distributor Network",
       "Export Enquiry Generation",
     ],
     linksTo: [
       {
         slug: "operations",
-        why: "A D2C brand exposes every quality and cost weakness directly to the consumer.",
+        why: "When you sell directly, every quality and cost problem reaches the customer.",
       },
       {
         slug: "capital",
-        why: "A branded business with owned customers is valued on a fundamentally different multiple.",
+        why: "A business with its own brand and customers sells for a much higher price.",
       },
     ],
   },
 
-  // ═══════════════════ 03 · MULTIPLY ═══════════════════
+  // ═══════════════════ 03 ═══════════════════
   {
     slug: "franchise",
     index: "03",
-    verb: "Multiply",
-    name: "Franchise Development & Expansion",
-    short: "Turn one profitable unit into a network that funds its own growth.",
-    rung: "Replicate what works — with other people's capital.",
-    headline: ["One profitable unit is a business.", "Fifty is an enterprise."],
+    verb: "Franchise",
+    name: "Franchise Expansion",
+    short: "Open more outlets using other people's money.",
+    rung: "Copy what works — funded by your franchise partners.",
+    headline: ["One outlet that earns well", "is a business. Fifty is a company."],
     thesis: [
-      "Franchising is the only expansion model where someone else funds your growth and runs it with an owner's attention. India already has a franchise sector worth roughly ₹800 billion across nearly 200,000 outlets — and it is still one of the least professionally executed expansion routes in the country.",
-      "Most brands franchise too early. They sell territories before the unit economics are proven, before SOPs exist, before anyone can explain why a customer chooses them. The first ten franchisees underperform, word travels, and the brand spends years recovering from expansion it wasn't ready for.",
-      "The work is not selling franchises. The work is making the unit worth replicating, designing an economic model where both sides genuinely win, and building the governance that keeps the fiftieth outlet as good as the first.",
+      "Franchising is the only way to grow where someone else puts in the money and runs the outlet like an owner. India already has around ₹800 billion of franchise business and nearly 2 lakh outlets — and it is still one of the most badly executed ways of expanding in the country.",
+      "Most brands start franchising too early. They sell territories before proving the outlet actually makes money, before writing down how it runs, before customers have any reason to prefer them. The first ten franchisees struggle, word spreads in the market, and the brand spends years recovering.",
+      "The real work is not selling franchises. It is making one outlet genuinely worth copying, building a money model where both sides actually earn, and putting controls in place so the 50th outlet is as good as the first.",
     ],
     problems: [
       {
-        title: "Expansion before proof",
+        title: "Expanding before the model is proven",
         detail:
-          "Selling territories on the strength of one good outlet in the founder's own city — with no evidence the model survives a different market, a different manager, or a different rent.",
+          "Selling franchises based on one good outlet in your own city — with no proof it works in a different city, with a different manager, at a different rent.",
       },
       {
-        title: "Economics that only work for the franchisor",
+        title: "Only the brand owner makes money",
         detail:
-          "A royalty structure the franchisee cannot afford produces a network of resentful, underperforming partners. Payback maths is the deal, not the pitch deck.",
+          "If the royalty is too high for the franchisee to survive, you end up with unhappy partners and closed outlets. The payback calculation is the real deal — not the presentation.",
       },
       {
-        title: "No operating system to hand over",
+        title: "Nothing written down to hand over",
         detail:
-          "Without SOPs, training, and standards, every franchisee reinvents the business badly — and the brand becomes a lottery for the customer.",
+          "Without written processes and training, every franchisee runs your business their own way, badly — and the customer never knows what to expect.",
       },
       {
-        title: "Model chosen by fashion, not fit",
+        title: "Picking the wrong franchise model",
         detail:
-          "FOFO, FOCO, FICO, COCO and master franchise each demand different capital, control, and capability. Choosing the wrong one is a structural error no marketing can fix.",
+          "FOFO, FOCO, FICO and master franchise each need different money and different control. Choosing wrongly is a mistake no amount of marketing can fix later.",
       },
     ],
     approach: [
       {
         phase: "01",
-        title: "Franchise readiness audit",
+        title: "We check if you are ready",
         detail:
-          "Is the unit genuinely profitable without the founder standing in it? Is the brand a reason to buy? Are the processes teachable? We answer honestly, including when the answer is 'not yet'.",
+          "Does the outlet earn money when you are not standing there? Is your brand a reason customers choose you? Can the work be taught to a stranger? We tell you honestly — including when the answer is 'not yet'.",
       },
       {
         phase: "02",
-        title: "Unit economics model",
+        title: "We build the money model",
         detail:
-          "Investment schedule, working capital need, break-even month, payback period, and franchisee IRR — modelled for realistic markets, not the best one you have.",
+          "Total investment needed, running capital, which month it breaks even, how many years to recover money, and what the franchisee actually earns — calculated for normal markets, not your best one.",
       },
       {
         phase: "03",
-        title: "Model & territory design",
+        title: "We pick the right model and territory",
         detail:
-          "FOFO for capital-light speed, FOCO where operational control decides the brand, master or area development for regional scale. Territory sizing that prevents partners cannibalising each other.",
+          "FOFO when you want fast growth with less money. FOCO when quality control decides your brand. Master or area franchise for whole regions. Plus territory sizes so partners don't eat into each other.",
       },
       {
         phase: "04",
-        title: "The operating system",
+        title: "We write down how it runs",
         detail:
-          "Operations manual, training curriculum, launch playbook, supply chain terms, brand standards — everything a competent stranger needs to run your business the way you would.",
+          "Operations manual, training course, opening checklist, supply terms, brand rules — everything a capable stranger needs to run your business the way you would.",
       },
       {
         phase: "05",
-        title: "Legal & commercial structure",
+        title: "We prepare the legal papers",
         detail:
-          "Franchise agreement, trademark protection, disclosure discipline, fee and royalty architecture, exit and termination terms. Built to survive the relationship going wrong.",
+          "Franchise agreement, trademark protection, fees and royalty structure, and exit terms. Written for the situation where the relationship goes wrong, not just when it goes well.",
       },
       {
         phase: "06",
-        title: "Franchisee acquisition",
+        title: "We find the right franchisees",
         detail:
-          "Positioning the opportunity, generating qualified investor enquiries, and — critically — filtering them. One wrong franchisee in a new city costs more than an empty territory.",
+          "Presenting the opportunity properly, generating genuine investor enquiries, and — most importantly — rejecting the wrong ones. One bad franchisee in a new city costs more than an empty territory.",
       },
       {
         phase: "07",
-        title: "Network governance",
+        title: "We keep the network performing",
         detail:
-          "Performance dashboards, audits, mystery shopping, and a support rhythm that makes franchisees more profitable every year. Retention beats recruitment.",
+          "Performance reports, audits, mystery shopping, and regular support that makes franchisees more profitable each year. Keeping good partners matters more than signing new ones.",
       },
     ],
     outcomes: [
-      { metric: "Outlets", direction: "up" },
-      { metric: "Capital deployed per outlet", direction: "down" },
-      { metric: "Franchisee profitability", direction: "up" },
-      { metric: "Network churn", direction: "down" },
+      { metric: "Number of outlets", direction: "up" },
+      { metric: "Your own money per outlet", direction: "down" },
+      { metric: "Franchisee earnings", direction: "up" },
+      { metric: "Outlet closures", direction: "down" },
     ],
     services: [
-      "Franchise Readiness Audit",
-      "Unit Economics Modelling",
+      "Franchise Readiness Check",
+      "Investment & Payback Model",
       "Model Selection (FOFO / FOCO / FICO)",
-      "Territory & Market Mapping",
-      "Operations Manual & SOPs",
-      "Training & Launch Playbooks",
-      "Franchise Agreement Structuring",
-      "Fee & Royalty Design",
-      "Franchisee Lead Generation",
-      "Partner Qualification",
-      "Network Performance Governance",
-      "Master & Area Development",
+      "Territory & City Mapping",
+      "Operations Manual & Processes",
+      "Training & Opening Support",
+      "Franchise Agreement",
+      "Fee & Royalty Structure",
+      "Finding Franchise Partners",
+      "Screening & Selection",
+      "Network Performance Monitoring",
+      "Master & Area Franchise",
     ],
     linksTo: [
       {
         slug: "operations",
-        why: "SOPs and KPI systems are the raw material a franchise network is built from.",
+        why: "Written processes and clear targets are what a franchise network is built on.",
       },
       {
         slug: "brand-demand",
-        why: "Nobody buys a franchise for a brand consumers have never chosen.",
+        why: "Nobody pays money for a franchise of a brand customers have never heard of.",
       },
     ],
   },
 
-  // ═══════════════════ 04 · UNLOCK ═══════════════════
+  // ═══════════════════ 04 ═══════════════════
   {
     slug: "capital",
     index: "04",
-    verb: "Unlock",
-    name: "Capital, M&A & Exit",
-    short: "Access the value you've spent twenty years building.",
-    rung: "Convert an operating business into realisable wealth.",
-    headline: ["You've built value for twenty years.", "Can you actually access it?"],
+    verb: "Raise or Sell",
+    name: "Funding, Mergers & Acquisitions",
+    short: "Raise money, sell your business, or buy another one.",
+    rung: "Turn the business you built into money you can use.",
+    headline: ["You built this for twenty years.", "Can you take money out of it?"],
     thesis: [
-      "Most Indian promoters hold their entire net worth inside one illiquid, undiversified, promoter-dependent asset — and have no idea what it is worth or whether anyone could buy it.",
-      "Capital comes in three forms and most businesses only ever try one. Debt funds working capital and equipment against assets and cash flow. Equity funds growth that debt cannot safely carry. And a sale — full or partial — converts decades of built value into liquidity, often while the promoter stays on to run it.",
-      "The uncomfortable truth of this practice is that most SMEs are, today, unsellable: books that don't reconcile, revenue concentrated in two accounts, related-party transactions nobody wants to explain, no MIS, and a business that stops working when the promoter travels. Making a company financeable and sellable is the work. The transaction is just the last step.",
+      "Most Indian business owners have their entire wealth locked inside one business — and have no real idea what it is worth or whether anyone would actually buy it.",
+      "Money comes in three forms and most owners only ever try one. Loans fund raw material, machines and daily running. Equity (investor money) funds growth that loans cannot safely carry. And selling — fully or partly — turns 20 years of hard work into cash in hand, often while you continue running the company.",
+      "The uncomfortable truth is that most Indian SMEs today cannot be sold: accounts that don't match, 70 percent of sales from two customers, family transactions nobody can explain, no proper reporting, and a business that stops working when the owner travels. Making a company fit to be funded or sold is the actual work. The deal itself is only the last step.",
     ],
     problems: [
       {
-        title: "Working capital funded expensively",
+        title: "You are paying too much for working capital",
         detail:
-          "Growth strangled by receivables while cheaper structured options — bill discounting, supply chain finance, equipment finance — go unused because nobody presented the business properly.",
+          "Growth is blocked by money stuck in udhari, while cheaper options like bill discounting, machinery loans and supply chain finance go unused — because nobody presented the business properly to lenders.",
       },
       {
-        title: "No idea what the business is worth",
+        title: "You don't know what your business is worth",
         detail:
-          "Valuation expectations set by cousin's-friend anecdotes rather than EBITDA quality, growth trajectory, customer concentration, and systems maturity.",
+          "Price expectations based on what someone's relative got, instead of real factors: profit quality, growth, customer spread and how well the business runs on systems.",
       },
       {
-        title: "Unsellable in its current state",
+        title: "The business cannot be sold as it is today",
         detail:
-          "Promoter dependency, unclean books, informal arrangements, and undocumented processes reduce buyer interest to bargain hunters — or to nobody at all.",
+          "Everything depending on the owner, unclear accounts, verbal arrangements and nothing written down. Serious buyers walk away and only bargain hunters remain.",
       },
       {
-        title: "One buyer, no process",
+        title: "One buyer and no process",
         detail:
-          "Most SME sales happen when a single interested party approaches. Without a competitive process, the seller has no leverage and no benchmark for what fair value looks like.",
+          "Most SME sales happen when one interested party approaches. With only one buyer at the table, you have no bargaining power and no idea if the price is fair.",
       },
     ],
     approach: [
       {
         phase: "01",
-        title: "Objective & readiness assessment",
+        title: "We understand what you actually want",
         detail:
-          "What does the promoter actually want — liquidity, growth capital, a partner, or an exit? Then an honest diagnosis of how financeable and sellable the business is today.",
+          "Cash in hand, money for growth, a partner, or a full exit? Then an honest assessment of how fundable and sellable your business is right now.",
       },
       {
         phase: "02",
-        title: "Value creation before the transaction",
+        title: "We increase the value first",
         detail:
-          "Twelve to twenty-four months of deliberate work: clean financials, reduce concentration, systematise operations, document processes, resolve compliance gaps. This is where multiples are actually made.",
+          "One to two years of planned work: clean up accounts, reduce dependence on a few customers, put systems in place, write down processes, clear licence issues. This is where a higher price is actually created.",
       },
       {
         phase: "03",
-        title: "Valuation & structuring",
+        title: "We calculate a proper valuation",
         detail:
-          "Defensible valuation across methods, and a structure that fits the objective — full sale, majority, minority growth capital, slump sale, or strategic partnership.",
+          "A value you can defend, and a structure that matches your goal — full sale, majority stake, minority investment for growth, or a business partnership.",
       },
       {
         phase: "04",
-        title: "Documentation",
+        title: "We prepare the documents",
         detail:
-          "Information memorandum, financial model, and data room built to withstand diligence. Preparation quality directly determines both price and probability of closing.",
+          "Business profile document, financial projections and a data room that can survive detailed checking. How well you prepare decides both the price and whether the deal closes at all.",
       },
       {
         phase: "05",
-        title: "Counterparty outreach",
+        title: "We approach buyers and investors",
         detail:
-          "Strategic acquirers, financial investors, and lenders approached confidentially and in parallel — because competition, not persuasion, is what sets price.",
+          "Competitor companies, investment funds and lenders — approached confidentially and several at the same time. Competition between buyers sets the price, not convincing one buyer.",
       },
       {
         phase: "06",
-        title: "Diligence & negotiation",
+        title: "We handle checking and negotiation",
         detail:
-          "Managing financial, legal, and operational diligence; negotiating terms, earn-outs, warranties, and transition. Deals die in diligence far more often than in negotiation.",
+          "Managing the buyer's financial, legal and operational verification, then negotiating price, payment terms and conditions. More deals die during checking than during price talks.",
       },
       {
         phase: "07",
-        title: "Close & transition",
+        title: "We close and hand over",
         detail:
-          "Completion, integration or handover planning, and the promoter's own transition — which is as much a personal transaction as a financial one.",
+          "Completing the paperwork, planning the handover, and managing your own transition out — which is as much a personal decision as a financial one.",
       },
     ],
     outcomes: [
-      { metric: "Valuation multiple", direction: "up" },
-      { metric: "Cost of capital", direction: "down" },
-      { metric: "Promoter liquidity", direction: "up" },
-      { metric: "Concentration risk", direction: "down" },
+      { metric: "Business value", direction: "up" },
+      { metric: "Interest cost", direction: "down" },
+      { metric: "Cash in your hand", direction: "up" },
+      { metric: "Dependence on few customers", direction: "down" },
     ],
     services: [
-      "Working Capital & Debt Structuring",
-      "Equipment & Project Finance",
+      "Working Capital & Loan Structuring",
+      "Machinery & Project Finance",
       "Bill Discounting & Supply Chain Finance",
-      "Growth & Private Equity Capital",
+      "Investor & Private Equity Funding",
       "Business Valuation",
-      "Sell-Side M&A",
-      "Buy-Side M&A",
-      "Sale Readiness Programme",
-      "Information Memorandum & Data Room",
-      "Financial Modelling",
-      "Due Diligence Management",
+      "Selling Your Business",
+      "Buying Another Business",
+      "Getting Sale-Ready",
+      "Business Profile & Data Room",
+      "Financial Projections",
+      "Managing Buyer Due Diligence",
       "Deal Negotiation & Closing",
-      "Succession & Transition Planning",
+      "Succession & Handover Planning",
     ],
     linksTo: [
       {
         slug: "operations",
-        why: "Systems maturity and EBITDA quality are the two things buyers pay a premium for.",
+        why: "Good profit and proper systems are the two things buyers pay extra for.",
       },
       {
         slug: "governance",
-        why: "Compliance and documentation gaps are the most common reason deals collapse in diligence.",
+        why: "Licence and record problems are the most common reason deals fall apart.",
       },
     ],
   },
 
-  // ═══════════════════ 05 · GOVERN ═══════════════════
+  // ═══════════════════ 05 ═══════════════════
   {
     slug: "governance",
     index: "05",
-    verb: "Govern",
-    name: "Compliance, Risk & Business Consulting",
-    short: "Growth without governance is just accumulating exposure.",
-    rung: "Protect what has been built — and make it institutional.",
-    headline: ["Growth without governance", "is just exposure."],
+    verb: "Stay Compliant",
+    name: "Compliance & Business Systems",
+    short: "Fix licences, records and systems so the business runs without you.",
+    rung: "Protect what you built and make it run on systems.",
+    headline: ["Growing fast without systems", "is how problems start."],
     thesis: [
-      "Indian businesses carry an extraordinary compliance load — factory, labour, environmental, product, tax, and corporate — spread across departments that rarely speak to each other. Most owners genuinely do not know their exposure until an inspection, a customer audit, or a diligence process finds it for them.",
-      "This practice serves manufacturers and service businesses alike, because the underlying problem is the same: a business that grew faster than its systems. Decisions live in one person's head, contracts are informal, records are reconstructed when someone asks, and delegation is impossible because nothing is defined.",
-      "Governance is not paperwork. It is what converts a promoter's business into an institution — one that can be audited, financed, franchised, inherited, or sold without depending on any single individual's memory.",
+      "Indian businesses have a huge compliance load — factory, labour, pollution, product, tax and company law — spread across departments that rarely talk to each other. Most owners genuinely don't know their risk until an inspector, a customer audit or a buyer's verification finds it for them.",
+      "This service is for manufacturers and service businesses alike, because the underlying problem is the same: the business grew faster than its systems. Decisions sit in one person's head, agreements are verbal, records get created only when someone asks, and work cannot be handed over because nothing is written down.",
+      "Compliance is not paperwork. It is what turns one person's business into a proper company — one that can be audited, funded, franchised, passed to the next generation or sold, without depending on what one man remembers.",
     ],
     problems: [
       {
-        title: "Exposure nobody has mapped",
+        title: "Nobody has listed your actual risk",
         detail:
-          "Licences lapsed, returns filed late, registers reconstructed before inspections, and no single view of what applies to this business at this size.",
+          "Licences expired, returns filed late, registers prepared the night before an inspection, and no single list of what actually applies to a business of your size.",
       },
       {
-        title: "Compliance staged, not lived",
+        title: "Systems built only for audit day",
         detail:
-          "Systems built for audit week deliver zero operational benefit and fail the moment a customer arrives unannounced.",
+          "Paperwork prepared for inspection week gives you no real benefit, and falls apart the moment a customer arrives without warning.",
       },
       {
-        title: "The business cannot be delegated",
+        title: "Nothing can be handed over",
         detail:
-          "No org structure, no defined authority, no MIS. Every decision routes through the owner, which caps growth precisely at the limit of one person's bandwidth.",
+          "No proper structure, no clear authority, no monthly reporting. Every decision comes to the owner, which limits growth to exactly what one person can handle.",
       },
       {
-        title: "Informality that becomes expensive later",
+        title: "Verbal arrangements that get costly later",
         detail:
-          "Undocumented arrangements with vendors, employees, and family shareholders are tolerable at ₹20 crore and catastrophic during a diligence at ₹200 crore.",
+          "Undocumented understandings with suppliers, staff and family members are manageable at ₹20 crore turnover and become a serious problem when a buyer checks your business at ₹200 crore.",
       },
     ],
     approach: [
       {
         phase: "01",
-        title: "Compliance mapping",
+        title: "We list everything that applies to you",
         detail:
-          "A complete register of what actually applies — factory, labour, environmental, product, tax, and corporate — with current status, owner, and renewal calendar for each.",
+          "A complete list of factory, labour, pollution, product, tax and company requirements — with current status, a responsible person, and renewal dates for each.",
       },
       {
         phase: "02",
-        title: "Gap closure",
+        title: "We close the gaps",
         detail:
-          "Prioritised by genuine risk rather than alphabetical order. Licences regularised, registers rebuilt, filings brought current, and the calendar handed to a named owner.",
+          "Sorted by real risk, not alphabetically. Licences regularised, registers rebuilt, pending filings completed, and the renewal calendar handed to a named person.",
       },
       {
         phase: "03",
-        title: "Product & certification readiness",
+        title: "We get your product certifications",
         detail:
-          "BIS, FSSAI, CDSCO, AYUSH, legal metrology, ISO and customer-specific standards — implemented as working systems that survive a surprise audit on any ordinary day.",
+          "BIS, FSSAI, CDSCO, AYUSH, weights and measures, ISO and customer-specific standards — set up as systems that work on a normal day, not just during audits.",
       },
       {
         phase: "04",
-        title: "Organisation & delegation",
+        title: "We build structure and delegation",
         detail:
-          "Org structure, roles, authority matrix, SOPs, and KPIs so that decisions happen at the right level and the owner stops being the bottleneck.",
+          "Organisation chart, roles, who can approve what, written processes and targets — so decisions happen at the right level and the owner stops being the bottleneck.",
       },
       {
         phase: "05",
-        title: "MIS & business governance",
+        title: "We set up monthly reporting",
         detail:
-          "A monthly information pack leadership actually reads, a review calendar that runs regardless of who is travelling, and a documented action log.",
+          "A monthly report the owner actually reads, a review meeting that happens whether or not you are travelling, and a written record of decisions taken.",
       },
       {
         phase: "06",
-        title: "Risk & contract hygiene",
+        title: "We check contracts and insurance",
         detail:
-          "Insurance adequacy, customer and vendor contract review, trademark and IP protection, and cleanup of related-party and family arrangements before they become someone else's leverage.",
+          "Is your insurance enough? Customer and supplier agreements reviewed, trademark protected, and family or related-party arrangements cleaned up before they become someone else's advantage.",
       },
     ],
     outcomes: [
       { metric: "Audit readiness", direction: "up" },
-      { metric: "Compliance exposure", direction: "down" },
-      { metric: "Owner dependency", direction: "down" },
-      { metric: "Decision speed", direction: "up" },
+      { metric: "Legal risk", direction: "down" },
+      { metric: "Dependence on owner", direction: "down" },
+      { metric: "Speed of decisions", direction: "up" },
     ],
     services: [
-      "Compliance Mapping & Registers",
-      "Factory & Labour Compliance",
-      "Environmental & Safety",
+      "Complete Compliance Checklist",
+      "Factory & Labour Licences",
+      "Pollution & Safety Compliance",
       "Product Certification (BIS / FSSAI / CDSCO / AYUSH)",
       "ISO, IATF & Customer Standards",
-      "GST, ROC & Corporate Filings",
-      "Org Structure & Authority Matrix",
-      "SOP & Policy Frameworks",
-      "MIS & Management Reporting",
-      "Contract & Risk Review",
-      "Trademark & IP Protection",
-      "Service Business Operations Consulting",
+      "GST, ROC & Company Filings",
+      "Organisation Structure & Authority",
+      "Written Processes & Policies",
+      "Monthly Reporting (MIS)",
+      "Contract & Insurance Review",
+      "Trademark Protection",
+      "Systems for Service Businesses",
     ],
     linksTo: [
       {
         slug: "capital",
-        why: "A clean compliance record is a precondition for any serious investor or acquirer.",
+        why: "Clean licences and records are the first thing any investor or buyer checks.",
       },
       {
         slug: "franchise",
-        why: "You cannot license a brand you have not legally protected.",
+        why: "You cannot licence a brand name you have not legally protected.",
       },
     ],
   },
@@ -564,34 +564,32 @@ export const practiceBySlug = (slug: string) =>
   practices.find((p) => p.slug === slug);
 
 // ─────────────────────────────────────────────────────────────
-// The udhari → D2C argument, in numbers.
-// Used by the Margin Ladder on the Brand & Demand practice page.
+// The udhari problem, in four numbers.
 // ─────────────────────────────────────────────────────────────
 
 export const udhariFacts = [
   {
-    stat: "60–70%",
-    label: "Margin the brand captures",
-    note: "on a product manufactured at 8–12% — the same product, from your line.",
+    stat: "60-70%",
+    label: "What the brand earns",
+    note: "on a product you made at 8-12% profit. Same product. Your factory.",
   },
   {
     stat: "90 days",
-    label: "Typical receivable cycle",
-    note: "offline and distributor channels routinely run 90–150 days on payment.",
+    label: "How long you wait for payment",
+    note: "dealers and distributors commonly take 90 to 150 days to pay you.",
   },
   {
-    stat: "7 days",
-    label: "D2C settlement",
-    note: "prepaid orders settle almost immediately; marketplaces in one to two weeks.",
+    stat: "Same day",
+    label: "When a D2C brand gets paid",
+    note: "online customers pay upfront. Marketplaces settle in one to two weeks.",
   },
   {
-    stat: "0",
+    stat: "Zero",
     label: "Customers who know your name",
-    note: "after twenty years of manufacturing under someone else's label.",
+    note: "after twenty years of making products under someone else's brand.",
   },
 ];
 
-// The ladder, as shown on the homepage.
 export const ladder = practices.map((p) => ({
   slug: p.slug,
   index: p.index,

@@ -11,15 +11,15 @@ export default function PracticesPage() {
   return (
     <>
       <PageHero
-        kicker="The Five Practices"
+        kicker="Our Five Services"
         title={
           <>
-            One firm for the whole
+            One partner for all five
             <br />
-            <span className="serif-i text-[var(--gold)]">value ladder.</span>
+            <span className="serif-i text-[var(--gold)]">services.</span>
           </>
         }
-        sub="Most advisors sell one rung. Operations here, a marketing agency there, a broker when it's time to sell. Nobody owns the climb. We built RELY360 to own all five."
+        sub="Most people sell you one thing. An operations consultant here, a marketing agency there, a broker when you want to sell. Nobody is responsible for the whole business. We do all five."
       />
 
       {/* the ladder */}
@@ -33,11 +33,11 @@ export default function PracticesPage() {
       <section>
         <div className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10 lg:py-28">
           <Reveal className="mb-14">
-            <p className="mono-label mb-6 text-[var(--gold)]">In Detail</p>
+            <p className="mono-label mb-6 text-[var(--gold)]">What Each One Does</p>
             <h2 className="display-tight max-w-3xl text-3xl md:text-5xl">
-              Each practice stands alone.
+              Take one service.
               <br />
-              <span className="text-[var(--ink-3)]">Together they compound.</span>
+              <span className="text-[var(--ink-3)]">Or take all five.</span>
             </h2>
           </Reveal>
 
@@ -88,16 +88,16 @@ export default function PracticesPage() {
                 <span className="mono-num text-sm text-[var(--gold-2)]">Σ</span>
                 <div>
                   <p className="display-tight text-2xl md:text-3xl">
-                    A factory made profitable, branded, replicated, financed and governed
-                    is not the same company.
+                    A factory that makes good profit, has its own brand, franchise outlets
+                    and clean records is worth far more.
                     <br />
                     <span className="serif-i text-[var(--gold-2)]">
-                      It is a different asset entirely.
+                      It is a completely different business.
                     </span>
                   </p>
                   <p className="mt-6 text-sm leading-relaxed opacity-60">
-                    That is the case for one partner across every function — instead of five
-                    vendors and nobody accountable for the outcome.
+                    That is why one partner for everything works better than five different
+                    people, none of whom is responsible for the final result.
                   </p>
                 </div>
               </div>

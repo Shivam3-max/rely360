@@ -70,7 +70,7 @@ function HeroDial() {
           fill="var(--ink-3)"
           style={{ fontFamily: "var(--font-fragment)", fontSize: "9px", letterSpacing: "0.3em" }}
         >
-          FIVE PRACTICES
+          FIVE SERVICES
         </text>
       </svg>
     </div>
@@ -90,33 +90,33 @@ function SectionMark({ n, label }: { n: string; label: string }) {
 /* ────────────────────────── the five traps ────────────────────────── */
 const traps = [
   {
-    name: "The Leak",
-    line: "Profit escapes every single day — from machines, purchase, rework and rhythm.",
-    answer: "Operate",
+    name: "Profit leaks every day",
+    line: "Machines run slow, buying prices are too high, rework never stops. Nobody adds it up.",
+    answer: "Cut Costs",
     slug: "operations",
   },
   {
-    name: "The Margin Trap",
-    line: "You manufacture at ten percent. Someone else's label sells it at sixty-five.",
-    answer: "Own",
+    name: "You make it, they earn from it",
+    line: "You earn 10% making the product. The brand on the packet earns 65% selling it.",
+    answer: "Sell Direct",
     slug: "brand-demand",
   },
   {
-    name: "The Ceiling",
-    line: "One outlet works beautifully. There is no system to make it fifty.",
-    answer: "Multiply",
+    name: "You cannot open more outlets",
+    line: "One outlet does well. There is no system to turn that into fifty.",
+    answer: "Franchise",
     slug: "franchise",
   },
   {
-    name: "The Lock",
-    line: "Twenty years of value, sitting inside an asset you cannot access or price.",
-    answer: "Unlock",
+    name: "Your money is stuck in the business",
+    line: "Twenty years of hard work, and no way to take cash out or even know its value.",
+    answer: "Raise or Sell",
     slug: "capital",
   },
   {
-    name: "The Exposure",
-    line: "The business outgrew its systems. Nobody has mapped what that now risks.",
-    answer: "Govern",
+    name: "Licences and records are a mess",
+    line: "The business grew faster than its systems, and nobody has listed the risk.",
+    answer: "Stay Compliant",
     slug: "governance",
   },
 ];
@@ -155,7 +155,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.25, ease: EASE }}
             >
-              From running a factory
+              More profit from your factory.
             </motion.span>
             <motion.span
               className="block"
@@ -163,8 +163,8 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.42, ease: EASE }}
             >
-              to owning an{" "}
-              <span className="serif-i text-[var(--gold)]">enterprise.</span>
+              And a business worth{" "}
+              <span className="serif-i text-[var(--gold)]">selling.</span>
             </motion.span>
           </h1>
 
@@ -174,9 +174,9 @@ export default function Home() {
             transition={{ duration: 1, delay: 1.0, ease: EASE }}
             className="mt-9 max-w-xl text-base leading-relaxed text-[var(--ink-2)] md:text-lg"
           >
-            Operations. Brand and D2C. Franchise. Capital and exit. Governance.
-            Five practices under one partner — the whole climb from making a product
-            to owning something worth selling.
+            Five services, one partner: cut factory costs, start your own D2C brand,
+            expand through franchise, raise funding or sell your business, and fix
+            compliance.
           </motion.p>
 
           <motion.div
@@ -186,13 +186,13 @@ export default function Home() {
             className="mt-12 flex flex-wrap items-center gap-5"
           >
             <Link href="/assessment" className="btn-ink">
-              Begin the Assessment
+              Get a Free Business Check
               <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
                 <path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" strokeWidth="1.2" />
               </svg>
             </Link>
             <Link href="/practices" className="btn-ghost">
-              The Five Practices
+              See All Services
             </Link>
           </motion.div>
 
@@ -216,9 +216,9 @@ export default function Home() {
           <SectionMark n="02" label="The Reality" />
           <Reveal>
             <h2 className="display-tight max-w-4xl text-4xl md:text-6xl">
-              Businesses don't stall for one reason.
+              Five problems stop most
               <br />
-              <span className="text-[var(--ink-3)]">They get caught in five.</span>
+              <span className="text-[var(--ink-3)]">businesses from growing.</span>
             </h2>
           </Reveal>
 
@@ -248,7 +248,7 @@ export default function Home() {
 
           <Reveal delay={0.2} className="mt-16">
             <p className="serif-i text-2xl text-[var(--ink-2)] md:text-3xl">
-              Most firms sell one escape. We built all five.
+              Most firms solve one of these. We solve all five.
             </p>
           </Reveal>
         </div>
@@ -257,20 +257,20 @@ export default function Home() {
       {/* ── 03 · THE VALUE LADDER ── */}
       <section className="border-t hairline">
         <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-36">
-          <SectionMark n="03" label="The Value Ladder" />
+          <SectionMark n="03" label="Our Five Services" />
           <div className="mb-16 flex flex-wrap items-end justify-between gap-8">
             <Reveal>
               <h2 className="display-tight max-w-2xl text-4xl md:text-6xl">
-                Five rungs.
+                Five steps.
                 <br />
-                <span className="serif-i text-[var(--gold)]">One climb.</span>
+                <span className="serif-i text-[var(--gold)]">One partner.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <p className="max-w-sm text-sm leading-relaxed text-[var(--ink-2)]">
-                Each rung stands on the one below it. A business that isn't profitable can't
-                be branded. A brand that isn't systematised can't be franchised. And nothing
-                unsystematised ever sells for what it's worth.
+                Each step builds on the one below. A factory that isn't profitable cannot
+                become a good brand. A business with nothing written down cannot be
+                franchised. And no business without systems ever sells for a good price.
               </p>
             </Reveal>
           </div>
@@ -284,7 +284,7 @@ export default function Home() {
           <Reveal className="mb-14 flex items-center gap-5">
             <span className="mono-num text-sm text-[var(--gold-2)]">04</span>
             <span className="h-px w-12 bg-[var(--gold-2)]" />
-            <span className="mono-label opacity-60">The Udhari Trap</span>
+            <span className="mono-label opacity-60">The Udhari Problem</span>
           </Reveal>
 
           <Reveal>
@@ -292,22 +292,22 @@ export default function Home() {
               You make the product.
               <br />
               <span className="serif-i text-[var(--gold-2)]">
-                Someone else makes the margin.
+                Someone else earns the profit.
               </span>
             </h2>
           </Reveal>
 
           <Reveal delay={0.15}>
             <p className="mt-10 max-w-2xl text-base leading-[1.85] opacity-70 md:text-lg">
-              You manufacture at eight to twelve percent. The brand whose label goes on your
-              product sells it at sixty to seventy. Then you wait ninety days to be paid —
-              your working capital financing your customer's growth, at your interest cost.
+              You make the product and earn 8 to 12 percent. The company whose name goes on
+              the packet earns 60 to 70 percent. Then you wait 90 days for your money —
+              this is udhari, and while you wait, your cash is running their business.
             </p>
           </Reveal>
           <Reveal delay={0.25}>
             <p className="mt-6 max-w-2xl text-base leading-[1.85] opacity-70 md:text-lg">
-              The escape isn't a new factory. It's the same factory, the same product, and a
-              direct line to the customer — under a brand you own.
+              The answer is not a new factory. It is the same factory, the same product,
+              and your own brand selling straight to the customer. For cash, not udhari.
             </p>
           </Reveal>
 
@@ -328,7 +328,7 @@ export default function Home() {
           <Reveal delay={0.2}>
             <div className="mt-14">
               <Link href="/practices/brand-demand" className="btn-paper">
-                Run your numbers on the Margin Ladder
+                Check your own numbers
                 <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
                   <path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" strokeWidth="1.2" />
                 </svg>
@@ -341,18 +341,18 @@ export default function Home() {
       {/* ── 05 · PRACTICES ── */}
       <section className="border-t hairline bg-[var(--panel)]">
         <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-36">
-          <SectionMark n="05" label="The Practices" />
+          <SectionMark n="05" label="What We Do" />
           <div className="mb-16 flex flex-wrap items-end justify-between gap-8">
             <Reveal>
               <h2 className="display-tight text-4xl md:text-6xl">
-                Five practices.
+                Five services.
                 <br />
-                <span className="text-[var(--ink-3)]">One accountable partner.</span>
+                <span className="text-[var(--ink-3)]">One partner who is responsible.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <Link href="/practices" className="link-arrow">
-                All Practices
+                See All Services
                 <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
                   <path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" strokeWidth="1.2" />
                 </svg>
@@ -393,18 +393,18 @@ export default function Home() {
       {/* ── 06 · INDUSTRIES ── */}
       <section className="border-t hairline">
         <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-36">
-          <SectionMark n="06" label="Where We Transform" />
+          <SectionMark n="06" label="Industries We Work In" />
           <div className="mb-14 flex flex-wrap items-end justify-between gap-8">
             <Reveal>
               <h2 className="display-tight text-4xl md:text-6xl">
-                If it manufactures,
+                If you manufacture it,
                 <br />
-                <span className="serif-i text-[var(--gold)]">we can transform it.</span>
+                <span className="serif-i text-[var(--gold)]">we can improve it.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <Link href="/industries" className="link-arrow">
-                All Industries
+                See All Industries
                 <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
                   <path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" strokeWidth="1.2" />
                 </svg>
@@ -433,20 +433,20 @@ export default function Home() {
           <Reveal className="mb-14 flex items-center gap-5">
             <span className="mono-num text-sm text-[var(--gold-2)]">07</span>
             <span className="h-px w-12 bg-[var(--gold-2)]" />
-            <span className="mono-label opacity-60">Meet the Architects</span>
+            <span className="mono-label opacity-60">Our Team</span>
           </Reveal>
 
           <div className="mb-16 flex flex-wrap items-end justify-between gap-8">
             <Reveal>
               <h2 className="display-tight text-4xl md:text-6xl">
-                Four specialists.
+                Four experts.
                 <br />
-                <span className="serif-i text-[var(--gold-2)]">One transformation team.</span>
+                <span className="serif-i text-[var(--gold-2)]">One team for your business.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <Link href="/architects" className="link-arrow !text-[var(--paper-on-dark)] hover:!text-[var(--gold-2)]">
-                The Architects
+                Meet the Team
                 <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
                   <path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" strokeWidth="1.2" />
                 </svg>
@@ -493,18 +493,18 @@ export default function Home() {
       {/* ── 08 · STORIES ── */}
       <section>
         <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-36">
-          <SectionMark n="08" label="Transformation Stories" />
+          <SectionMark n="08" label="Client Results" />
           <div className="mb-16 flex flex-wrap items-end justify-between gap-8">
             <Reveal>
               <h2 className="display-tight text-4xl md:text-6xl">
-                Real impact.
+                Real results.
                 <br />
-                <span className="text-[var(--ink-3)]">Not praise.</span>
+                <span className="text-[var(--ink-3)]">Real numbers.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <Link href="/stories" className="link-arrow">
-                All Stories
+                See All Results
                 <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
                   <path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" strokeWidth="1.2" />
                 </svg>
